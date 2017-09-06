@@ -1,44 +1,19 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var CompressionPlugin = require("compression-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
+const merge = require('webpack-merge');
+const baseConfig = require("./webpack.base.config.js");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = {
-    entry: [
-        'babel-polyfill',
-        path.join(__dirname, "./../src/app"),
-    ],
-    output: {
-        path: path.join(__dirname, "./../build/js"),
-        filename: 'bundle.js',
-        publicPath: '/js/'
-    },
+const config = {
     resolve: {
-        // alias: {
-        //     "react": "preact-compat",
-        //     "react-dom": "preact-compat",
-        // },
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loader: "babel-loader",
-                include: path.join(__dirname, './../src'),
-                query: {
-                    presets: ['es2015', 'react'],
-                    plugins: [require('babel-plugin-transform-function-bind')]
-                }
-            },
-            {
-                test: /\.css/,
-                loader: ExtractTextPlugin.extract("css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:10]")
-            }
-        ]
+        alias: {
+            "react": "preact-compat",
+            "react-dom": "preact-compat",
+        },
     },
     plugins: [
-        new ExtractTextPlugin("../css/bundle.css"),
         new webpack.optimize.AggressiveMergingPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
@@ -64,7 +39,7 @@ module.exports = {
         }),
         //new BundleAnalyzerPlugin(),
     ],
-    externals: {
-        'site-config': JSON.stringify(require('./site-config.json'))
-    }
 };
+
+
+module.exports = merge(baseConfig, config);

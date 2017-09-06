@@ -2,7 +2,7 @@
 
 My own React Quickstart project for fast development of new apps.
 
-## Getting Started
+### Getting Started
 
 In order to start, you should clone this repo. You also need node & npm infrastructure installed.
 
@@ -25,11 +25,16 @@ src #react source code
 * Install ```npm i```
 * Run and enjoy ```npm start```
 
-## Built With
+### How to work
+
+This project is very versatile. First of all, you can run this project as node instance or as webpack-dev-server instance
+
+
+### Built With
 
 * [React v.15.0](https://facebook.github.io/react/blog/2016/04/07/react-v15.html) + [Redux v.4.0](https://github.com/reactjs/redux) through [React Redux](https://github.com/reactjs/react-redux)
-* [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - For redux logic
 * [React Router v.4.0](https://github.com/ReactTraining/react-router) - Routing system
+* [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - For redux logic
 * [Babel](https://github.com/babel/babel) - ES6 to ES5 converter
 * [Webpack v.2.0](https://github.com/webpack/webpack) - Building tool
 * [ESLint](https://github.com/eslint/eslint) - Linting tool

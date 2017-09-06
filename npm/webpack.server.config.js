@@ -2,9 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const merge = require('webpack-merge');
+const baseConfig = require("./webpack.base.config.js");
 const port = process.env.port || process.env.PORT || 3000;
 
-module.exports = {
+const config = {
     entry: {
         app: [path.join(__dirname, '../src/webpack-app.js')],
         hrm: [
@@ -18,34 +20,13 @@ module.exports = {
         filename: 'js/[name].js',
         publicPath: '/',
     },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loader: "babel-loader",
-                include: path.join(__dirname, './../src'),
-                query: {
-                    presets: ['es2015', 'react'],
-                    plugins: [require('babel-plugin-transform-function-bind')]
-                }
-            },
-            {
-                test: /\.css/,
-                loader: ExtractTextPlugin.extract("css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:10]")
-            }
-        ]
-    },
     plugins: [
-        new ExtractTextPlugin("../css/bundle.css"),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '../build/webpack-index.html')
         })
     ],
-    externals: {
-        'site-config': JSON.stringify(require('./site-config.json'))
-    },
     devServer: {
         hot: true,
         contentBase: path.join(__dirname, '../build2'),
@@ -58,3 +39,5 @@ module.exports = {
         disableHostCheck: true
     }
 };
+
+module.exports = merge(baseConfig, config);

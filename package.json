@@ -4,7 +4,8 @@
   "description": "react foundation for building any react app",
   "main": "app/server.js",
   "scripts": {
-    "start": "cross-env PORT=3315 node app/server.js",
+    "start": "npm run node",
+    "node": "cross-env PORT=3315 node app/server.js",
     "webpack": "cross-env PORT=3316 webpack-dev-server --config npm/webpack.server.config.js",
     "build:prod": "node_modules/webpack/bin/webpack.js -p --config npm/webpack.prod.config.js",
     "gitpush": "sh npm/gitpush.sh"
@@ -32,7 +33,8 @@
     "redux": "^3.6.0",
     "universal-cookie": "^2.0.7",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
