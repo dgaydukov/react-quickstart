@@ -12,10 +12,10 @@ As I'm a linux user, this project is best works with linux, but it can work in w
 
 ### Project Structure
 ```
-app
-build
-npm
-src
+app #directory with node.js server
+build #directory with static files
+npm #directory with building configs
+src #react source code
 ```
 
 ### Installing
@@ -27,7 +27,13 @@ src
 
 ## Built With
 
-* [React 15.0](https://facebook.github.io/react/blog/2016/04/07/react-v15.html) - The web framework
+* [React v.15.0](https://facebook.github.io/react/blog/2016/04/07/react-v15.html) + [Redux v.4.0](https://github.com/reactjs/redux) through [React Redux](https://github.com/reactjs/react-redux)
+* [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - For redux logic
+* [React Router v.4.0](https://github.com/ReactTraining/react-router) - Routing system
+* [Babel](https://github.com/babel/babel) - ES6 to ES5 converter
+* [Webpack v.2.0](https://github.com/webpack/webpack) - Building tool
+* [ESLint](https://github.com/eslint/eslint) - Linting tool
+
 
 
 ## Authors

@@ -16,18 +16,3 @@ window.onload = () => {
         document.getElementById('main')
     );
 }
-console.log(12)
-
-
-
-/**
- my custom HMR simulation
- */
-var sendevent = require('sendevent');
-if(process.env.NODE_ENV != "production"){
-    sendevent('/eventstream', function(event) {
-        if(event.reload){
-            window.location.reload();
-        }
-    });
-}

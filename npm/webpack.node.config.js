@@ -1,8 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var CompressionPlugin = require("compression-webpack-plugin");
+var fs = require('fs')
 
 module.exports = {
     entry: [
@@ -13,12 +12,6 @@ module.exports = {
         path: path.join(__dirname, "./../build/js"),
         filename: 'bundle.js',
         publicPath: '/js/'
-    },
-    resolve: {
-        // alias: {
-        //     "react": "preact-compat",
-        //     "react-dom": "preact-compat",
-        // },
     },
     module: {
         loaders: [
@@ -39,30 +32,6 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin("../css/bundle.css"),
-        new webpack.optimize.AggressiveMergingPlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            comments: false,
-            compress: {
-                unused: true,
-                dead_code: true,
-                warnings: false,
-                drop_debugger: true,
-                conditionals: true,
-                evaluate: true,
-                drop_console: true,
-                sequences: true,
-                booleans: true,
-            }
-        }),
-        new CompressionPlugin({
-            asset: "[path].gz[query]",
-            algorithm: "gzip",
-            test: /\.js$|\.html$/,
-            threshold: 10240,
-            minRatio: 0.8
-        }),
-        //new BundleAnalyzerPlugin(),
     ],
     externals: {
         'site-config': JSON.stringify(require('./site-config.json'))
