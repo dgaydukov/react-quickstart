@@ -1,0 +1,5 @@
+{
+    "baseURL": "https://payqr.ru/websdk/api/",
+    "cookieUserId": "userId",
+    "cookieAuthToken": "accessToken"
+}
