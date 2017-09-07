@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+* List of redux pure functions for getting data
+ */
+
 import * as types from "./action-types";
 
 

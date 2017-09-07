@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+* Header component
+ */
+
 import React, {PureComponent} from 'react';
 import {Link} from 'react-router-dom';
 import s from "./header.css";

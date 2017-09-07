@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+* API functions call
+ */
+
 import store from "../redux/store";
 import {getProfileSuccess} from "../redux/action-creators";
 

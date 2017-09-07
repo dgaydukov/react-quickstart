@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+* Profile Reducer for getting user profile data
+ */
+
 
 import * as types from '../action-types';
 

@@ -1,5 +1,7 @@
-/**
- * Created by diman on 14.05.17.
+'use strict'
+
+/*
+* Image bundler uses for image copying from src to build
  */
 
 
@@ -11,7 +13,7 @@ const path = require('path'),
 
 const IMG_DIR = "img";
 
-getSrcImgDirRecursive = (dir, cb) => {
+const getSrcImgDirRecursive = (dir, cb) => {
     fs.readdirSync(dir)
         .filter(file => {
             const srcImgDir = path.join(dir, file);
@@ -24,7 +26,7 @@ getSrcImgDirRecursive = (dir, cb) => {
         });
 }
 
-copyDir = (from, to) => {
+const copyDir = (from, to) => {
     fse.emptyDir(to, (err) => {
         fse.copy(from, to, (err)=>{
             if (err) {
@@ -36,19 +38,19 @@ copyDir = (from, to) => {
     })
 }
 
-copySrcToBuild = (dir) => {
+const copySrcToBuild = (dir) => {
     const srcDirName = dir.replace(modulesDir, "").replace(IMG_DIR, "");
     const buildModuleImgDir = path.join(buildImgDir, srcDirName);
     copyDir(dir, buildModuleImgDir);
 }
 
-bundleImage = (dir) => {
+const bundleImage = (dir) => {
     getSrcImgDirRecursive(dir, (srcImgDir)=>{
         copySrcToBuild(srcImgDir);
     });
 }
 
-watchImage = (dir) => {
+const watchImage = (dir) => {
     getSrcImgDirRecursive(dir, (srcImgDir)=>{
         fs.watch(srcImgDir, (event, filename) => {
             if(event == "rename"){

@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+* Redux store
+ */
+
 import { createStore } from 'redux';
 import reducers from './reducers';
 

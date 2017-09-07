@@ -15,6 +15,10 @@ As I'm a linux user, this project is best works with linux, but it can work in w
 app #directory with node.js server
 build #directory with static files
 npm #directory with building configs
+-webpack.base.config.js - basic configuration
+-webpack.node.config.js - config for runngin node.js server
+-webpack.prod.config.js - config for building production version
+-webpack.server.config.js - config for webpack-dev-server
 src #react source code
 ```
 
@@ -27,7 +31,11 @@ src #react source code
 
 ### How to work
 
-This project is very versatile. First of all, you can run this project as node instance or as webpack-dev-server instance
+This project is very versatile. First of all you have 2 web servers
+* Node.js server that use webpack compiler to watch file changes, and [SSE](https://www.npmjs.com/package/server-sent-events) for page reloading
+* Webpack server, use [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server) for recompile and [HMR](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) for page reload
+You should choose which scenario fits best for you
+
 
 
 ### Built With

@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+ * React Router
+ * Connect redux state to all routes
+ */
+
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';

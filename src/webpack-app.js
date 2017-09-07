@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+ * React App entry point for webpack-dev-server
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
