@@ -1,17 +1,28 @@
 'use strict';
 
-/*
-* API functions call
+/**
+ * List of API functions
  */
 
 import store from "../redux/store";
-import {getProfileSuccess} from "../redux/action-creators";
+import * as ac from "../redux/action-creators";
 
 /**
- imitate auth
+ * imitate auth (without thunk)
  */
-export function load(){
+export function getUser(){
     setTimeout(()=>{
-        store.dispatch(getProfileSuccess({id: 1}));
+        store.dispatch(ac.getUserSuccess({id: 1}));
     }, 3000)
+}
+
+/**
+ * imitate catalog request (with thunk)
+ */
+export function getCatalog(){
+    return dispatch => {
+        setTimeout(()=>{
+            dispatch(ac.getCatalogSuccess([{productId:1, name:"fridge"}]));
+        }, 3000)
+    }
 }

@@ -10,6 +10,7 @@ import Header from "./header/header";
 import Main from "../main/main";
 import Profile from "../profile/profile";
 import NotFound from "../404/notfound";
+import {getUser} from "../../api/webapi";
 
 const Content = (props) => {
     return(
@@ -39,8 +40,13 @@ export default class Layout extends React.Component{
     constructor(props){
         super(props);
     }
+
+    componentDidMount(){
+        getUser();
+    }
+
     render(){
-        console.log("layout render, userId", this.props.profile.id)
+        console.log("this.props.profile", this.props.profile)
         return(
             <div className="wrapper">
                 <Header/>

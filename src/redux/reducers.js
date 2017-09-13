@@ -5,11 +5,12 @@
  */
 
 import { combineReducers } from 'redux';
-import profileReducer from './reducers/profile-reducer';
+import userReducer from './reducers/user-reducer';
+import catalogReducer from './reducers/catalog-reducer';
+
 
 // Combine Reducers
-const reducers = combineReducers({
-    profileState: profileReducer,
+export default combineReducers({
+    userState: userReducer,
+    catalogState: catalogReducer,
 });
-
-export default reducers;

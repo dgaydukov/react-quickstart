@@ -19,7 +19,8 @@ const Router = (props) => {
 };
 const mapStateToProps = function(store) {
     return {
-        profile: store.profileState.profile,
+        profile: store.userState.user,
+        catalog: store.catalogState.catalog,
     };
 };
-export const ConnectedRouter = connect(mapStateToProps)(Router);
+export default connect(mapStateToProps)(Router);

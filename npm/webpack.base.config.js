@@ -17,17 +17,25 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: "babel-loader",
                 include: path.join(__dirname, './../src'),
+                loader: "eslint-loader",
+                query: {
+                    configFile: path.join(__dirname, "./../npm/.eslintrc.json"),
+                },
+            },
+            {
+                test: /\.js$/,
+                include: path.join(__dirname, './../src'),
+                loader: "babel-loader",
                 query: {
                     presets: ['es2015', 'react'],
-                    plugins: [require('babel-plugin-transform-function-bind')]
+                    plugins: ['babel-plugin-transform-function-bind', "babel-plugin-transform-object-rest-spread"]
                 }
             },
             {
                 test: /\.css/,
                 loader: ExtractTextPlugin.extract("css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:10]")
-            }
+            },
         ]
     },
     plugins: [
