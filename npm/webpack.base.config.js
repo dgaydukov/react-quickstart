@@ -29,7 +29,11 @@ module.exports = {
                 loader: "babel-loader",
                 query: {
                     presets: ['es2015', 'react'],
-                    plugins: ['babel-plugin-transform-function-bind', "babel-plugin-transform-object-rest-spread"]
+                    plugins: [
+                        "babel-plugin-transform-function-bind",
+                        "babel-plugin-transform-object-rest-spread",
+                        "transform-async-to-generator",
+                    ]
                 }
             },
             {

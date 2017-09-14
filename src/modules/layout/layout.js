@@ -46,9 +46,9 @@ export default class Layout extends React.Component{
     }
 
     render(){
-        console.log("this.props.profile", this.props.profile)
         return(
             <div className="wrapper">
+                <div>{this.props.profile.id?"user logged":"login"}</div>
                 <Header/>
                 <Content {...this.props}/>
             </div>
