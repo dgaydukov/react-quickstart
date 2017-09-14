@@ -1,31 +1,30 @@
-const path = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fs = require('fs')
 
 module.exports = {
-    entry: [
-        'babel-polyfill',
-        path.join(__dirname, "./../src/app"),
-    ],
+    entry: {
+        app: [resolve(__dirname, '../src') + '/app.js'],
+        vendor: [
+            'babel-polyfill',
+            'react',
+            'react-router-dom',
+            'react-redux',
+            'redux-thunk'
+        ]
+    },
     output: {
-        path: path.join(__dirname, "./../build/js"),
-        filename: 'bundle.js',
-        publicPath: '/js/'
+        path: resolve(__dirname, '../build'),
+        filename: 'js/[name].js',
+        publicPath: '/',
+        chunkFilename: '[id].[chunkhash].js'
     },
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                include: path.join(__dirname, './../src'),
-                loader: "eslint-loader",
-                query: {
-                    configFile: path.join(__dirname, "./../npm/.eslintrc.json"),
-                },
-            },
-            {
-                test: /\.js$/,
-                include: path.join(__dirname, './../src'),
+                include: resolve(__dirname, './../src'),
                 loader: "babel-loader",
                 query: {
                     presets: ['es2015', 'react'],

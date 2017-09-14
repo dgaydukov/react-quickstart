@@ -1,4 +1,4 @@
-const path = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -37,7 +37,13 @@ const config = {
             threshold: 10240,
             minRatio: 0.8
         }),
-        //new BundleAnalyzerPlugin(),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor']
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        }),
+        new BundleAnalyzerPlugin(),
     ],
 };
 

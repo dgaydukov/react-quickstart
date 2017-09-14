@@ -1,6 +1,9 @@
 .idea
 node_modules
-build/js/bundle.js
+build/js/vendor.js
+build/js/app.js
+build/js/vendor.js.gz
+build/js/app.js.gz
 build/css/bundle.css
 npm-debug.log
 package-lock.json

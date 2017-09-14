@@ -1,4 +1,4 @@
-const path = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -8,7 +8,7 @@ const port = process.env.port || process.env.PORT || 3000;
 
 const config = {
     entry: {
-        app: [path.join(__dirname, '../src/webpack-app.js')],
+        app: [resolve(__dirname, '../src/webpack-app.js')],
         hrm: [
             'react-hot-loader/patch',
             `webpack-dev-server/client?http://127.0.0.1:${port}`,
@@ -16,7 +16,7 @@ const config = {
         ]
     },
     output: {
-        path: path.join(__dirname, "./../build2"),
+        path: resolve(__dirname, "./../build2"),
         filename: 'js/[name].js',
         publicPath: '/',
     },
@@ -24,12 +24,12 @@ const config = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '../build/webpack-index.html')
+            template: resolve(__dirname, '../build/webpack-index.html')
         })
     ],
     devServer: {
         hot: true,
-        contentBase: path.join(__dirname, '../build2'),
+        contentBase: resolve(__dirname, '../build2'),
         publicPath: '/',
         stats: 'errors-only',
         port: port,
