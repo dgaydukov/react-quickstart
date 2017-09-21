@@ -50,10 +50,10 @@ You should choose which scenario fits best for you
 
 ## Where to store Redux Logic
 
-* Action creators
-* Api functions
-* Redux thunk
-* Redux selectors
+* Action creators [action-creators.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/redux/action-creators.js)
+* Api functions [webapi.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/api/webapi.js)
+* Redux thunk [action-thunks.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/redux/action-thunks.js)
+* Redux selectors [catalog-reducer.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/redux/reducers/catalog-reducer.js)
 
 
 ## Code Splitting
@@ -61,6 +61,7 @@ You should choose which scenario fits best for you
 There are 2 concepts on code splitting
 * Split code in app.js & vendor.js
 * Split code based on url
+
 The first is pretty straightforward. You just move out all libraries into different file (for example vendor.js) and thus you get 2 files instead of one.
 Webpack allow it by simply put 2 entry points. You can checkout it by looking at [webpack.base.config.js](https://github.com/dgaydukov/react-quickstart/blob/master/npm/webpack.base.config.js).
 The second approach is a bit tricky. Fortunately webpack also provide us with this ability out of the box.
