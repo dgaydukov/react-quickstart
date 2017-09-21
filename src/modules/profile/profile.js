@@ -1,7 +1,7 @@
 'use strict';
 
-/*
-* Profile component
+/**
+ * Profile component
  */
 
 import React from 'react';

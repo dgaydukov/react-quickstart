@@ -21,31 +21,13 @@ export const getUser = ()=>{
  * imitate catalog request (with thunk)
  */
 export const getCatalog = ()=>{
-    return dispatch => {
-        setTimeout(()=>{
-            dispatch(ac.getCatalogSuccess([{productId:1, name:"fridge"}]));
-        }, 3000)
-    }
-}
-
-
-/*
- * ajax request
- */
-
-export const getDate = ()=>{
     setTimeout(()=>{
-        console.log("first callback");
-        setTimeout(()=>{
-            console.log("seond callback");
-            setTimeout(()=>{
-                console.log("third callback");
-                setTimeout(()=>{
-                    console.log("fourth callback");
-                }, 1000);
-            }, 1000);
-        }, 1000);
-    }, 1000);
+        store.dispatch(ac.getCatalogSuccess([
+            {productId: 1, name: "fridge", price: 100},
+            {productId: 2, name: "kettle", price: 200},
+            {productId: 3, name: "tv", price: 300},
+        ]));
+    }, 1000)
 }
 
 
@@ -83,4 +65,4 @@ const getRequest = async ()=>{
     return third;
 }
 
-getRequest().then(x=>console.log(x))
+//getRequest().then(x=>console.log(x))

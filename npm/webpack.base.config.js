@@ -16,9 +16,9 @@ module.exports = {
     },
     output: {
         path: resolve(__dirname, '../build'),
-        filename: 'js/[name].js',
+        filename: 'js/react/[name].js',
         publicPath: '/',
-        chunkFilename: '[id].[chunkhash].js'
+        chunkFilename: 'js/react/[id].[chunkhash].js',
     },
     module: {
         loaders: [

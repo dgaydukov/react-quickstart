@@ -1,34 +1,30 @@
 'use strict';
 
-/*
-* React App entry point
+/**
+ * React App entry point
  */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from "./redux/store";
-import ConnectedRouter from "./router";
+import ReduxRouter from "./router";
 
 window.onload = () => {
     ReactDOM.render(
-        <Provider store={store}>
-            <ConnectedRouter />
-        </Provider>,
+        <ReduxRouter/>,
         document.getElementById('main')
     );
 }
 
-
-
 /**
- my custom HMR simulation
+ * Page reload after file changes, with SSE & node.js express server
+ * https://www.npmjs.com/package/server-sent-events
  */
-var sendevent = require('sendevent');
-if(process.env.NODE_ENV != "production"){
+if("NODE" == process.env.WEB_SERVER){
+    const sendevent = require('sendevent');
     sendevent('/eventstream', function(event) {
         if(event.reload){
             window.location.reload();
         }
     });
 }
+

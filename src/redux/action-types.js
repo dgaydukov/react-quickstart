@@ -1,7 +1,7 @@
 'use strict';
 
-/*
-* List of redux constants
+/**
+ * List of redux constants
  */
 
 export const GET_USER_SUCCESS = "GET_USER_SUCCESS";

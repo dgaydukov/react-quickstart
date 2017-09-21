@@ -1,7 +1,8 @@
 'use strict';
 
-/*
-* Redux store
+/**
+ *  Redux store
+ *  Here create store with thunk options
  */
 
 import { createStore, applyMiddleware } from 'redux';

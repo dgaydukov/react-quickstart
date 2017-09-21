@@ -1,9 +1,6 @@
 .idea
 node_modules
-build/js/vendor.js
-build/js/app.js
-build/js/vendor.js.gz
-build/js/app.js.gz
+build/js/react
 build/css/bundle.css
 css/bundle.css
 npm-debug.log

@@ -1,8 +1,8 @@
 'use strict';
 
-/*
-* User Reducer for getting user profile data
-*/
+/**
+ * User Reducer for getting user profile data
+ */
 
 
 import * as types from '../action-types';

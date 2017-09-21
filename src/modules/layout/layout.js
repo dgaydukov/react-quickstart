@@ -1,34 +1,43 @@
 'use strict';
 
-/*
-* WebApp layout component
+/**
+ *  WebApp layout component
  */
 
 import React from 'react';
 import {Link, Switch, Route, Redirect} from 'react-router-dom';
+import throttle from "lodash/throttle";
+import debounce from "lodash/debounce";
 import Header from "./header/header";
-import Main from "../main/main";
-import Profile from "../profile/profile";
-import NotFound from "../404/notfound";
-import {getUser} from "../../api/webapi";
+import AsyncComponent from "../../async-component";
+import {getUser, getCatalog} from "../../api/webapi";
+
+const Main = props => <AsyncComponent load={System.import('../main/main')} {...props}/>
+const NotFound = props => <AsyncComponent load={System.import('../404/notfound')} {...props}/>
+const Profile = props => <AsyncComponent load={System.import('../profile/profile')} {...props}/>
+
 
 const Content = (props) => {
     return(
         <Switch>
-            <Route path="/main" component={Main}/>
-            <Route path="/403" render={(routeProps)=>{
+            <Route path="/main" render={(routerProps)=>{
                 return(
-                    <NotFound {...props} {...routeProps}/>
+                    <Main {...props} {...routerProps}/>
                 )
             }}/>
-            <Route path="/profile" render={(routeProps)=>{
+            <Route path="/403" render={(routerProps)=>{
                 return(
-                    props.profile.id ?
-                        <Profile {...props}/>
+                    <NotFound {...props} {...routerProps}/>
+                )
+            }}/>
+            <Route path="/profile" render={(routerProps)=>{
+                return(
+                    props.user.id ?
+                        <Profile {...props} {...routerProps}/>
                         :
                         <Redirect to={{
                             pathname: '/403',
-                            from: routeProps.location.pathname
+                            from: routerProps.location.pathname
                         }}/>
                 )
             }}/>
@@ -42,14 +51,15 @@ export default class Layout extends React.Component{
     }
 
     componentDidMount(){
-        getUser();
+        //getUser();
+        this.props.getUser();
+        getCatalog();
     }
 
     render(){
         return(
             <div className="wrapper">
-                <div>{this.props.profile.id?"user logged":"login"}</div>
-                <Header/>
+                <Header {...this.props}/>
                 <Content {...this.props}/>
             </div>
         )

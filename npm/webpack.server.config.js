@@ -5,10 +5,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
 const baseConfig = require("./webpack.base.config.js");
 const port = process.env.port || process.env.PORT || 3000;
+const buildDir = resolve(__dirname, '../webpack-build');
 
 const config = {
     entry: {
-        app: [resolve(__dirname, '../src/webpack-app.js')],
+        app: [resolve(__dirname, '../src/app.js')],
         hrm: [
             'react-hot-loader/patch',
             `webpack-dev-server/client?http://127.0.0.1:${port}`,
@@ -16,7 +17,7 @@ const config = {
         ]
     },
     output: {
-        path: resolve(__dirname, "./../build2"),
+        path: buildDir,
         filename: 'js/[name].js',
         publicPath: '/',
     },
@@ -29,7 +30,7 @@ const config = {
     ],
     devServer: {
         hot: true,
-        contentBase: resolve(__dirname, '../build2'),
+        contentBase: buildDir,
         publicPath: '/',
         stats: 'errors-only',
         port: port,

@@ -1,11 +1,11 @@
 'use strict';
 
-/*
-* Not found component
+/**
+ * Not found component
  */
 
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class NotFound extends React.Component{
     constructor(props){

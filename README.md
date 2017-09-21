@@ -42,12 +42,30 @@ You should choose which scenario fits best for you
 
 * [React v.15.0](https://facebook.github.io/react/blog/2016/04/07/react-v15.html) + [Redux v.4.0](https://github.com/reactjs/redux) through [React Redux](https://github.com/reactjs/react-redux)
 * [React Router v.4.0](https://github.com/ReactTraining/react-router) - Routing system
-* [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - For redux logic
+* [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - middleware for redux (thunk concept)
+* [Redux selectors](https://github.com/reactjs/reselect) - middleware for redux (reselect concept)
 * [Babel](https://github.com/babel/babel) - ES6 to ES5 converter
 * [Webpack v.2.0](https://github.com/webpack/webpack) - Building tool
 * [ESLint](https://github.com/eslint/eslint) - Linting tool
 
+## Where to store Redux Logic
 
+* Action creators
+* Api functions
+* Redux thunk
+* Redux selectors
+
+
+## Code Splitting
+
+There are 2 concepts on code splitting
+* Split code in app.js & vendor.js
+* Split code based on url
+The first is pretty straightforward. You just move out all libraries into different file (for example vendor.js) and thus you get 2 files instead of one.
+Webpack allow it by simply put 2 entry points. You can checkout it by looking at [webpack.base.config.js](https://github.com/dgaydukov/react-quickstart/blob/master/npm/webpack.base.config.js).
+The second approach is a bit tricky. Fortunately webpack also provide us with this ability out of the box.
+The point is that webpack whenever it sees ```System.import```, it starts to load code into chunk. And when we go to the url, webpack request this chunk.
+You can check out [async-component](https://github.com/dgaydukov/react-quickstart/blob/master/src/async-component.js).
 
 ## Authors
 

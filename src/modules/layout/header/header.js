@@ -16,6 +16,7 @@ export default class Header extends PureComponent{
         return(
             <header>
                 <ul className={s.list}>
+                    <li><Link to="/">{this.props.user.id?"logged":"auth"}</Link></li>
                     <li><Link to="/main">main</Link></li>
                     <li><Link to="/profile">profile</Link></li>
                 </ul>

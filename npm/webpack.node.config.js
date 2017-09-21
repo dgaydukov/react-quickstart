@@ -1,5 +1,6 @@
 const {resolve} = require('path');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 const baseConfig = require("./webpack.base.config.js");
 
 const config = {
@@ -15,6 +16,11 @@ const config = {
             },
         ]
     },
+    plugins: [      
+        new webpack.DefinePlugin({
+            'process.env.WEB_SERVER': '"NODE"'
+        })
+    ]
 };
 
 module.exports = merge(baseConfig, config);

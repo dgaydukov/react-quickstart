@@ -1,7 +1,7 @@
 'use strict';
 
-/*
-* List of redux pure functions for getting data
+/**
+ * List of thunks to store redux logic or make async actions
  */
 
 import * as types from "./action-types";
