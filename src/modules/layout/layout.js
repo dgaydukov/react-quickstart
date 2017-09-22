@@ -6,38 +6,29 @@
 
 import React from 'react';
 import {Link, Switch, Route, Redirect} from 'react-router-dom';
-import throttle from "lodash/throttle";
-import debounce from "lodash/debounce";
 import Header from "./header/header";
-import AsyncComponent from "../../async-component";
-import {getUser, getCatalog} from "../../api/webapi";
-
-const Main = props => <AsyncComponent load={System.import('../main/main')} {...props}/>
-const NotFound = props => <AsyncComponent load={System.import('../404/notfound')} {...props}/>
-const Profile = props => <AsyncComponent load={System.import('../profile/profile')} {...props}/>
-
+import Main from "../main/main";
+import Profile from "../profile/profile";
+import NotFound from "../404/notfound";
+import {getUser} from "../../api/webapi";
 
 const Content = (props) => {
     return(
         <Switch>
-            <Route path="/main" render={(routerProps)=>{
+            <Route path="/main" component={Main}/>
+            <Route path="/403" render={(routeProps)=>{
                 return(
-                    <Main {...props} {...routerProps}/>
+                    <NotFound {...props} {...routeProps}/>
                 )
             }}/>
-            <Route path="/403" render={(routerProps)=>{
-                return(
-                    <NotFound {...props} {...routerProps}/>
-                )
-            }}/>
-            <Route path="/profile" render={(routerProps)=>{
+            <Route path="/profile" render={(routeProps)=>{
                 return(
                     props.user.id ?
-                        <Profile {...props} {...routerProps}/>
+                        <Profile {...props}/>
                         :
                         <Redirect to={{
                             pathname: '/403',
-                            from: routerProps.location.pathname
+                            from: routeProps.location.pathname
                         }}/>
                 )
             }}/>
@@ -51,9 +42,7 @@ export default class Layout extends React.Component{
     }
 
     componentDidMount(){
-        //getUser();
-        this.props.getUser();
-        getCatalog();
+        getUser();
     }
 
     render(){
