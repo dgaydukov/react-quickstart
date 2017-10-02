@@ -74,31 +74,34 @@ In order to use Async version, just comment layout import and use AsyncLayout in
 
 The magic is here
 ```javascript
-/******/ 		var head = document.getElementsByTagName('head')[0];
-/******/ 		var script = document.createElement('script');
-/******/ 		script.type = 'text/javascript';
-/******/ 		script.charset = 'utf-8';
-/******/ 		script.async = true;
-/******/ 		script.timeout = 120000;
-/******/
-/******/ 		if (__webpack_require__.nc) {
-/******/ 			script.setAttribute("nonce", __webpack_require__.nc);
-/******/ 		}
-/******/ 		script.src = __webpack_require__.p + "js/react/" + chunkId + "." + {"2":"4b578c06079938850b7b","3":"742508d606b5509c8e18","4":"20c8fe7c0346fe23c0a8"}[chunkId] + ".js";
-/******/ 		var timeout = setTimeout(onScriptComplete, 120000);
-/******/ 		script.onerror = script.onload = onScriptComplete;
-/******/ 		function onScriptComplete() {
-/******/ 			// avoid mem leaks in IE.
-/******/ 			script.onerror = script.onload = null;
-/******/ 			clearTimeout(timeout);
-/******/ 			var chunk = installedChunks[chunkId];
-/******/ 			if(chunk !== 0) {
-/******/ 				if(chunk) {
-/******/ 					chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
-/******/ 				}
-/******/ 				installedChunks[chunkId] = undefined;
-/******/ 			}
-/******/ 		};
+var head = document.getElementsByTagName('head')[0];
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.charset = 'utf-8';
+script.async = true;
+script.timeout = 120000;
+if (__webpack_require__.nc) {
+    script.setAttribute("nonce", __webpack_require__.nc);
+}
+script.src = __webpack_require__.p + "js/react/" + chunkId + "." + {
+    "2": "4b578c06079938850b7b",
+    "3": "742508d606b5509c8e18",
+    "4": "20c8fe7c0346fe23c0a8"
+}[chunkId] + ".js";
+var timeout = setTimeout(onScriptComplete, 120000);
+script.onerror = script.onload = onScriptComplete;
+
+function onScriptComplete() {
+    script.onerror = script.onload = null;
+    clearTimeout(timeout);
+    var chunk = installedChunks[chunkId];
+    if (chunk !== 0) {
+        if (chunk) {
+            chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
+        }
+        installedChunks[chunkId] = undefined;
+    }
+};
 ```
 As we see react watch for router change, then if file not loaded upload it
 
@@ -205,7 +208,7 @@ class Button extends PureComponent{
     }
 }
 ```
-Here we memoize every ```onClick``` event
+Here we memoize every ```onClick``` event, and ```WeakMap``` also helps here to use it's internal gb clear functions.
 
 
 ## Authors
