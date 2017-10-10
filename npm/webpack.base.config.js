@@ -42,7 +42,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("../css/bundle.css"),
+        new ExtractTextPlugin("../build/css/bundle.css"),
     ],
     externals: {
         'site-config': JSON.stringify(require('./site-config.json'))
