@@ -29,9 +29,7 @@ class Header extends PureComponent{
 
 
 Header.propTypes = {
-    user: {
-        id: PropTypes.string
-    }
+    user: PropTypes.object
 };
 
 export default Header

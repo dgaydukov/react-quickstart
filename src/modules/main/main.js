@@ -8,6 +8,7 @@
  */
 
 import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 
 class Main extends React.Component{
     constructor(props){
@@ -66,10 +67,11 @@ class Button extends PureComponent{
     }
 }
 
+   
 Button.propTypes = {
-    title: "",
-    onClick: "",
-    i: "",
+    title: PropTypes.string,
+    onClick: PropTypes.func,
+    i: PropTypes.number,
 };
 
 export default Main;
