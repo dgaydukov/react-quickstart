@@ -5,13 +5,15 @@
  */
 
 import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import s from "./header.css";
 
-export default class Header extends PureComponent{
+class Header extends PureComponent{
     constructor(props){
         super(props);
     }
+
     render(){
         return(
             <header>
@@ -24,3 +26,12 @@ export default class Header extends PureComponent{
         )
     }
 }
+
+
+Header.propTypes = {
+    user: {
+        id: PropTypes.string
+    }
+};
+
+export default Header

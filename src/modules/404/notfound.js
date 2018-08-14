@@ -14,7 +14,7 @@ export default class NotFound extends React.Component{
     render(){
         return(
             <div>
-                <h1>Sorry, this page doesn't exist</h1>
+                <h1>Sorry, this page doesn&apos;t exist</h1>
                 <Link to="/main">main</Link>
             </div>
         )

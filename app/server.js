@@ -48,19 +48,22 @@ compiler.watch({
 }, (err, stats)=>{
     var jsonStats = stats.toJson();
     if(err){
-        console.log("webpack error", err);
+        console.log("webpack error", err)
     }
     if(jsonStats.errors.length > 0){
-        console.log("webpack stats error", jsonStats.errors);
+        console.log(`webpack stats error: ${jsonStats.errors.length}`)
+        jsonStats.errors.map(err=>{
+            console.log(err)
+        })
     }
     if(jsonStats.warnings.length > 0){
-        console.log("webpack stats warnings", jsonStats.warnings);
+        console.log(`webpack stats warnings: ${jsonStats.warnings.length}`, jsonStats.warnings)
     }
     console.log(`${url}, change detected`);
     events.broadcast({reload: true});
     if(isFirstStart){
-        console.log(`opening browser ${url}`);
-        exec(`x-www-browser ${url}`);
+        console.log(`opening browser ${url}`)
+        exec(`x-www-browser ${url}`)
         isFirstStart = false;
     }
 });

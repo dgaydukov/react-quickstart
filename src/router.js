@@ -13,13 +13,14 @@ import store from "./redux/store";
 //
 
 /**
+ * in order to use async loading based on url
  * change this code
  * <Layout {...props}/> => <AsyncLayout {...props}/>
- * and comment layout
- * in order to use async loading based on url
+ * and uncomment
+ * import AsyncLayout from "./modules/layout/async.layout"
  *
  */
-import AsyncLayout from "./modules/layout/async.layout"
+
 import Layout from "./modules/layout/layout"
 
 

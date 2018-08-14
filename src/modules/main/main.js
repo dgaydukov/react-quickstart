@@ -9,7 +9,7 @@
 
 import React, {PureComponent} from 'react';
 
-export default class Main extends React.Component{
+class Main extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -60,9 +60,16 @@ class Button extends PureComponent{
             onClick,
             i
         } = this.props;
-        console.log("render Button")
         return(
             <button onClick={()=>{onClick(i)}}>{title}</button>
         )
     }
 }
+
+Button.propTypes = {
+    title: "",
+    onClick: "",
+    i: "",
+};
+
+export default Main;
