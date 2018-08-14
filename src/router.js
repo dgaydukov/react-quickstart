@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { connect, Provider } from 'react-redux';
 import store from "./redux/store";
 
-//import Layout from "./modules/layout/layout"
+//
 
 /**
  * change this code
@@ -20,6 +20,8 @@ import store from "./redux/store";
  *
  */
 import AsyncLayout from "./modules/layout/async.layout"
+import Layout from "./modules/layout/layout"
+
 
 import {getUser} from "./redux/action-thunks";
 import {getFilteredCatalog} from './redux/reducers/catalog-reducer'
@@ -27,7 +29,7 @@ import {getFilteredCatalog} from './redux/reducers/catalog-reducer'
 const Router = (props) => {
     return (
         <BrowserRouter>
-            <AsyncLayout {...props}/>
+            <Layout {...props}/>
         </BrowserRouter>
     )
 };

@@ -45,6 +45,7 @@ export default class Main extends React.Component{
         return(
             <div>
                 <h1>Main Page</h1>
+                <h5>Your React version: {React.version}</h5>
                 <div>{this.state.counter}</div>
                 {[...new Array(10)].map((item,i)=>this.renderButton(i))}
             </div>
