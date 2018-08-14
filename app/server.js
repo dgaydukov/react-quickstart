@@ -14,7 +14,7 @@ const express = require('express'),
     app = express(),
     compiler = webpack(webpackConfig),
     events = sendevent('/eventstream'),    
-    port = process.env.port || process.env.PORT || 3000,
+    port = process.env.PORT,
     host = "127.0.0.1",
     url = `http://${host}:${port}`;
 
@@ -59,7 +59,7 @@ compiler.watch({
     if(jsonStats.warnings.length > 0){
         console.log(`webpack stats warnings: ${jsonStats.warnings.length}`, jsonStats.warnings)
     }
-    console.log(`${url}, change detected`);
+    console.log(`change detected: ${url}`);
     events.broadcast({reload: true});
     if(isFirstStart){
         console.log(`opening browser ${url}`)

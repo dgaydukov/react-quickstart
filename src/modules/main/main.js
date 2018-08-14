@@ -67,7 +67,7 @@ class Button extends PureComponent{
     }
 }
 
-   
+
 Button.propTypes = {
     title: PropTypes.string,
     onClick: PropTypes.func,

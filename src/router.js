@@ -1,18 +1,10 @@
 'use strict';
 
-/*
+/**
  * React Router
  * Connect redux state to all routes
- */
-
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { connect, Provider } from 'react-redux';
-import store from "./redux/store";
-
-//
-
-/**
+ *
+ *
  * in order to use async loading based on url
  * change this code
  * <Layout {...props}/> => <AsyncLayout {...props}/>
@@ -21,11 +13,17 @@ import store from "./redux/store";
  *
  */
 
+
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { connect, Provider } from 'react-redux';
+import store from "./redux/store"
 import Layout from "./modules/layout/layout"
-
-
-import {getUser} from "./redux/action-thunks";
+import {getUser} from "./redux/action-thunks"
 import {getFilteredCatalog} from './redux/reducers/catalog-reducer'
+
+
+
 
 const Router = (props) => {
     return (
