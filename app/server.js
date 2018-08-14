@@ -22,9 +22,8 @@ let isFirstStart = true;
 
 
 
-
 //serve gzip encoding header for gzipped files (usually bundle.js.gz)
-app.get('*.gz', function(req, res, next) {
+app.get('*.gz', (req, res, next)=>{
     res.set('Content-Encoding', 'gzip');
     next();
 });
@@ -36,7 +35,7 @@ app.use(events);
 app.use(express.static(path.join(__dirname, './../build')));
 
 //redirect every request to index.html, so we can use BrowserRouter (instead of HashRouter)
-app.get('*', function (req, res) {
+app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname, './../build/index.html'));
 });
 
@@ -46,7 +45,7 @@ imageBundler.watch();
 compiler.watch({
     aggregateTimeout: 300,
     poll: true,
-}, function(err, stats) {
+}, (err, stats)=>{
     var jsonStats = stats.toJson();
     if(err){
         console.log("webpack error", err);
@@ -66,7 +65,7 @@ compiler.watch({
     }
 });
 
-app.listen(port, host, function (err) {
+app.listen(port, host, (err)=>{
     if (err) {
         return console.error(err);
     }
