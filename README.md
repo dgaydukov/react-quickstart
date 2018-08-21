@@ -1,18 +1,46 @@
 # React QuickStart
 
 ## Content
+* [Description](#description)
+* [Installation](#installation)
+* [Built With](#built-with)
+* [Project Structure](#project-structure)
+* [How to work](#how-to-work)
+* [Redux vs Saga](#redux-vs-saga)
+* [Code splitting](#code-splitting)
+* [Authors](#authors)
 
 ### Description
 
-My own React Quickstart project for fast development of new apps.
+My own React QuickStart project for fast development of new apps.
 
-### Getting Started
-
-In order to start, you should clone this repo. You also need node & npm infrastructure installed.
-
-### Prerequisites
+### Installation
 
 As I'm a linux user, this project is best works with linux, but it can work in windows environment too.
+In order to install run following steps: 
+
+* Clone repository ```git clone https://github.com/dgaydukov/react-quickstart.git```
+* Go to react ```cd react-quickstart```
+* Install ```npm i```
+* Run and enjoy ```npm start```
+
+
+### Built With
+
+* [React v.16.4](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
+    * [Redux v.4.0](https://github.com/reactjs/redux) 
+    * [React Redux](https://github.com/reactjs/react-redux)
+    * [redux-saga](https://github.com/redux-saga/redux-saga) - middleware for redux (reselect concept)
+    * [React Router v.4.0](https://github.com/ReactTraining/react-router) - Routing system
+    * [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - middleware for redux (thunk concept)
+    * [Redux selectors](https://github.com/reactjs/reselect) - middleware for redux (reselect concept)
+* [Babel](https://github.com/babel/babel) - ES6 to ES5 converter
+* [Webpack v.2.0](https://github.com/webpack/webpack) - Building tool
+* [ESLint](https://github.com/eslint/eslint) - Linting tool
+* [Immutable](https://facebook.github.io/immutable-js) - Facebook library to work with immutable data types in js
+
+
+
 
 ### Project Structure
 ```
@@ -26,12 +54,6 @@ npm #directory with building configs
 src #react source code
 ```
 
-### Installing
-
-* Clone repository ```git clone https://github.com/dgaydukov/react-quickstart.git```
-* Go to react ```cd react-quickstart```
-* Install ```npm i```
-* Run and enjoy ```npm start```
 
 ### How to work
 
@@ -42,17 +64,7 @@ You should choose which scenario fits best for you
 
 
 
-### Built With
-
-* [React v.15.0](https://facebook.github.io/react/blog/2016/04/07/react-v15.html) + [Redux v.4.0](https://github.com/reactjs/redux) through [React Redux](https://github.com/reactjs/react-redux)
-* [React Router v.4.0](https://github.com/ReactTraining/react-router) - Routing system
-* [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - middleware for redux (thunk concept)
-* [Redux selectors](https://github.com/reactjs/reselect) - middleware for redux (reselect concept)
-* [Babel](https://github.com/babel/babel) - ES6 to ES5 converter
-* [Webpack v.2.0](https://github.com/webpack/webpack) - Building tool
-* [ESLint](https://github.com/eslint/eslint) - Linting tool
-
-### Where to store Redux Logic
+### Redux vs Saga
 
 * Action creators [action-creators.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/redux/action-creators.js)
 * Api functions [webapi.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/api/webapi.js)
@@ -60,6 +72,10 @@ You should choose which scenario fits best for you
 * Redux selectors [catalog-reducer.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/redux/reducers/catalog-reducer.js)
 
 
+
+### Code splitting
+
+Here you can check [example](https://github.com/dgaydukov/react-quickstart/blob/master/code-splitting.md)
 
 
 
