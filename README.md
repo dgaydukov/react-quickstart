@@ -6,7 +6,7 @@
 * [Built With](#built-with)
 * [Project Structure](#project-structure)
 * [How to work](#how-to-work)
-* [Redux vs Saga](#redux-vs-saga)
+* [redux-thunk vs redux-saga](#redux-vs-saga)
 * [Async Loading](#async-loading)
 * [Authors](#authors)
 
@@ -64,7 +64,7 @@ You should choose which scenario fits best for you
 
 
 
-### Redux vs Saga
+### redux-thunk vs redux-saga
 
 Here the list of redux logic: 
 
