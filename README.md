@@ -28,8 +28,8 @@ In order to install run following steps:
 ### Built With
 
 * [React v.16.4](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
-    * [Redux v.4.0](https://github.com/reactjs/redux) 
-    * [React Redux](https://github.com/reactjs/react-redux)
+    * [Redux v.4.0](https://github.com/reactjs/redux) - redux library
+    * [React Redux](https://github.com/reactjs/react-redux) - redux connector to react
     * [redux-saga](https://github.com/redux-saga/redux-saga) - middleware for redux (reselect concept)
     * [React Router v.4.0](https://github.com/ReactTraining/react-router) - Routing system
     * [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - middleware for redux (thunk concept)
