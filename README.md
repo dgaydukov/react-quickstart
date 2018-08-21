@@ -7,7 +7,7 @@
 * [Project Structure](#project-structure)
 * [How to work](#how-to-work)
 * [Redux vs Saga](#redux-vs-saga)
-* [Code splitting](#code-splitting)
+* [Async Loading](#async-loading)
 * [Authors](#authors)
 
 ### Description
@@ -28,12 +28,12 @@ In order to install run following steps:
 ### Built With
 
 * [React v.16.4](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
-    * [Redux v.4.0](https://github.com/reactjs/redux) - redux library
-    * [React Redux](https://github.com/reactjs/react-redux) - redux connector to react
-    * [redux-saga](https://github.com/redux-saga/redux-saga) - middleware for redux (reselect concept)
     * [React Router v.4.0](https://github.com/ReactTraining/react-router) - Routing system
+    * [Redux v.4.0](https://github.com/reactjs/redux) - redux library
     * [Redux Thunk v.2.0](https://github.com/gaearon/redux-thunk) - middleware for redux (thunk concept)
     * [Redux selectors](https://github.com/reactjs/reselect) - middleware for redux (reselect concept)
+    * [react-redux](https://github.com/reactjs/react-redux) - redux connector to react
+    * [redux-saga](https://github.com/redux-saga/redux-saga) - middleware for redux (reselect concept)
 * [Babel](https://github.com/babel/babel) - ES6 to ES5 converter
 * [Webpack v.2.0](https://github.com/webpack/webpack) - Building tool
 * [ESLint](https://github.com/eslint/eslint) - Linting tool
@@ -66,6 +66,8 @@ You should choose which scenario fits best for you
 
 ### Redux vs Saga
 
+Here the list of redux logic: 
+
 * Action creators [action-creators.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/redux/action-creators.js)
 * Api functions [webapi.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/api/webapi.js)
 * Redux thunk [action-thunks.js](https://github.com/dgaydukov/react-quickstart/blob/master/src/redux/action-thunks.js)
@@ -73,9 +75,36 @@ You should choose which scenario fits best for you
 
 
 
-### Code splitting
+### Async Loading
 
-Here you can check [example](https://github.com/dgaydukov/react-quickstart/blob/master/code-splitting.md)
+By default webpack generate one file, usually called `bundle.js`, browser load this file, and when loaded, react start execution.
+This is simple sync way how it works. The problem is that this file can be huge, and if slow connection, user will see blank page
+until this file has been loaded. To speed up you can split this file into several and load them asynchronous. For this use `entry`
+in webpack.config.js
+
+```javascript
+{
+    entry: {
+        app: [resolve(__dirname, '../src') + '/app.js'],
+        vendor: [
+            'babel-polyfill',
+            'react',
+            'react-router-dom',
+            'react-redux',
+            'redux-thunk'
+        ]
+    }
+}
+```
+Here we divide our file on two parts and load them concurrently
+```html
+<script src="/js/react/vendor.js"></script>
+<script src="/js/react/app.js"></script>
+```
+They load asynchronously, but wait each other. 
+
+If you want further improve speed, you can go deeper and split code loading. [Here](https://github.com/dgaydukov/react-quickstart/blob/master/code-splitting.md)
+is my explanation how it works in `React`.
 
 
 
