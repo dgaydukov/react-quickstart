@@ -1,22 +1,23 @@
 'use strict';
 
-/*
-* node.js instance server
+/**
+ * Node.js instance server
+ * app entry point
  */
 
+
+require('module-alias/register')
 const express = require('express'),
     exec = require('child_process').exec,
     webpack = require("webpack"),
     sendevent = require('sendevent'),
-    imageBundler = require("./../npm/image.bundler"),
-    webpackConfig = require("./../npm/webpack.node.config"),
+    imageBundler = require("@npm/image.bundler"),
+    webpackConfig = require("@npm/webpack.node.config"),
     path = require('path'),
     app = express(),
     compiler = webpack(webpackConfig),
     events = sendevent('/eventstream'),    
-    port = process.env.PORT,
-    host = "127.0.0.1",
-    url = `http://${host}:${port}`;
+    port = process.env.PORT;
 
 let isFirstStart = true;
 
@@ -68,13 +69,9 @@ compiler.watch({
     }
 });
 
-app.listen(port, host, (err)=>{
+app.listen(port, (err)=>{
     if (err) {
         return console.error(err);
     }
-    console.log(`Listening ${url}`);
+    console.log(`Listening http://127.0.0.1:${port}`);
 });
-
-
-
-

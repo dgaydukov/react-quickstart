@@ -5,7 +5,7 @@ const baseConfig = require("./webpack.base.config.js");
 
 const config = {
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 include: resolve(__dirname, './../src'),
