@@ -7,6 +7,7 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Header from "@modules/layout/header/header";
+import Footer from "@modules/layout/footer/footer";
 import Main from "@modules/main/main";
 import Profile from "@modules/profile/profile";
 import NotFound from "@modules/404/notfound";
@@ -46,6 +47,7 @@ export default class Layout extends React.Component{
             <div className="wrapper">
                 <Header {...this.props}/>
                 <Content {...this.props}/>
+                <Footer {...this.props}/>
             </div>
         )
     }
