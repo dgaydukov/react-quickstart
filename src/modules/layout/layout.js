@@ -10,7 +10,6 @@ import Header from "./header/header";
 import Main from "../main/main";
 import Profile from "../profile/profile";
 import NotFound from "../404/notfound";
-import {getUser} from "../../api/webapi";
 
 const Content = (props) => {
     return(
@@ -42,7 +41,8 @@ export default class Layout extends React.Component{
     }
 
     componentDidMount(){
-        this.props.dispatch(getUser())
+        this.props.getUser()
+        this.props.getCatalog()
     }
 
     render(){

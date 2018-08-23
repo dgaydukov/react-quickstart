@@ -19,6 +19,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { connect, Provider } from 'react-redux';
 import store from "./redux/store"
 import Layout from "./modules/layout/layout"
+import * as api from "./api/webapi";
 
 
 
@@ -34,16 +35,21 @@ const mapStateToProps = store => (
     {
         user: store.userState.user,
         catalog: store.catalogState.catalog,
-        filteredCatalog: ()=>store.catalogState.catalog.filter(k=>k.price > 100)
+        filteredCatalog: ()=>{
+            store.catalogState.catalog.filter(k=>k.price > 100)
+        },
     }
 );
 
 const mapDispatchToProps = dispatch => (
     {
         dispatch: dispatch,
-        onClick: (id) => {
-            dispatch({type:"", data:id})
-        }
+        getUser: ()=>{
+            dispatch(api.getUser())
+        },
+        getCatalog: ()=>{
+            dispatch(api.getCatalog())
+        },
     }
 )
 

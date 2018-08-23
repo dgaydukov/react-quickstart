@@ -2,6 +2,8 @@
 
 /**
  * List of API functions
+ * used with thunk https://github.com/reduxjs/redux-thunk
+ *
  */
 
 //import axios from "axios";
@@ -19,9 +21,7 @@ export const getUser = ()=>{
     }
 }
 
-/**
- * imitate catalog request (with thunk)
- */
+
 export const getCatalog = ()=>{
     return (dispatch, getState) => {
         setTimeout(()=>{
