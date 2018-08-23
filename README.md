@@ -37,7 +37,9 @@ In order to install run following steps:
 * [Babel](https://github.com/babel/babel) - ES6 to ES5 converter
 * [Webpack v.2.0](https://github.com/webpack/webpack) - Building tool
 * [ESLint](https://github.com/eslint/eslint) - Linting tool
-* [Immutable](https://facebook.github.io/immutable-js) - Facebook library to work with immutable data types in js
+* [Immutable](https://facebook.github.io/immutable-js) - Facebook library to work with immutable data types in js. Try always use it, instead
+of simple `{}` or `[]`. It's especially useful when you have array of object. And you have to change it. In this case simple `Object.assign`
+will not work, and you have to use some custom `deepCopy` method. So just use immutable.js in this case
 
 
 

@@ -43,7 +43,7 @@ class Main extends React.Component{
         return component
     }
 
-  
+
     click(i){
         this.setState({counter: i});
     }
