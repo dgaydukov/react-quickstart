@@ -1,26 +1,13 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
 const baseConfig = require("./webpack.base.config.js");
-const port = process.env.port || process.env.PORT || 3000;
+const port = process.env.PORT;
 const buildDir = resolve(__dirname, '../webpack-build');
 
 const config = {
-    entry: {
-        app: [resolve(__dirname, '../src/app.js')],
-        hrm: [
-            'react-hot-loader/patch',
-            `webpack-dev-server/client?http://127.0.0.1:${port}`,
-            'webpack/hot/only-dev-server'
-        ]
-    },
-    output: {
-        path: buildDir,
-        filename: 'js/[name].js',
-        publicPath: '/',
-    },
+    target: "web",
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),

@@ -24,6 +24,8 @@ In order to install run following steps:
 * Install ```npm i```
 * Run and enjoy ```npm start```
 
+In case you want to run webpack server then `npm run webpack`
+
 
 ### Built With
 
