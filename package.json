@@ -4,17 +4,13 @@
   "description": "react foundation for building any react app",
   "main": "app/server.js",
   "scripts": {
-    "start": "npm run node",
-    "node": "cross-env PORT=3315 node app/server.js",
+    "start": "cross-env PORT=3315 node app/server.js",
     "webpack": "cross-env PORT=3316 webpack-dev-server --config npm/webpack.server.config.js",
     "build:prod": "node_modules/webpack/bin/webpack.js -p --config npm/webpack.prod.config.js",
     "gitpush": "sh npm/gitpush.sh"
   },
   "author": "Gaydukov Dmitriy",
   "license": "ISC",
-  "_moduleAliases": {
-    "@npm": "npm"
-  },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.17.1",

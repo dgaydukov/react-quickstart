@@ -3,13 +3,13 @@
 /*
 * node.js instance server
  */
-require('module-alias/register')
+
 const express = require('express'),
     exec = require('child_process').exec,
     webpack = require("webpack"),
     sendevent = require('sendevent'),
-    imageBundler = require("@npm/image.bundler"),
-    webpackConfig = require("@npm/webpack.node.config"),
+    imageBundler = require("./../npm/image.bundler"),
+    webpackConfig = require("./../npm/webpack.node.config"),
     path = require('path'),
     app = express(),
     compiler = webpack(webpackConfig),
