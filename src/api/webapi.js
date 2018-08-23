@@ -23,7 +23,7 @@ export const getUser = ()=>{
 
 
 export const getCatalog = ()=>{
-    return (dispatch, getState) => {
+    return (dispatch) => {
         setTimeout(()=>{
             dispatch(ac.getCatalogSuccess([
                 {productId: 1, name: "fridge", price: 100},
@@ -32,4 +32,4 @@ export const getCatalog = ()=>{
             ]));
         }, 2000)
     }
-}
+} 

@@ -7,7 +7,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import s from "./header.css";
+import s from "@modules/layout/header/header.css";
 
 class Header extends PureComponent{
     constructor(props){
@@ -18,7 +18,7 @@ class Header extends PureComponent{
         return(
             <header>
                 <ul className={s.list}>
-                    <li><Link to="/">{`main(${this.props.user.id?"logged":"anonymous"})`}</Link></li>
+                    <li><Link to="/">{`/(${this.props.user.id?"logged":"anonymous"})`}</Link></li>
                     <li><Link to="/main">main</Link></li>
                     <li><Link to="/profile">profile</Link></li>
                 </ul>

@@ -6,11 +6,9 @@
 
 import React from 'react';
 import {Link, Switch, Route, Redirect} from 'react-router-dom';
-import throttle from "lodash/throttle";
-import debounce from "lodash/debounce";
-import Header from "./header/header";
-import AsyncComponent from "../../async-component";
-import {getUser, getCatalog} from "../../api/webapi";
+import Header from "@modules/layout/header/header";
+import AsyncComponent from "@root/async-component";
+import {getUser, getCatalog} from "@api/webapi";
 
 const Main = props => <AsyncComponent load={System.import('../main/main')} {...props}/>
 const NotFound = props => <AsyncComponent load={System.import('../404/notfound')} {...props}/>
@@ -51,9 +49,8 @@ export default class Layout extends React.Component{
     }
  
     componentDidMount(){
-        //getUser();
-        this.props.getUser();
-        getCatalog();
+        this.props.getUser()
+        this.props.getCatalog()
     }
 
     render(){

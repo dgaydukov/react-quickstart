@@ -4,7 +4,6 @@
 * Image bundler uses for image copying from src to build
  */
 
-
 const path = require('path'),
     fs = require('fs'),
     fse = require('fs-extra'),

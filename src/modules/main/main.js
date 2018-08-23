@@ -9,7 +9,7 @@
 
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-var Immutable = require('immutable');
+const Immutable = require('immutable');
 
 
 const map1 = Immutable.Map({a:1, b:2, c:3});
