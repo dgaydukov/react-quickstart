@@ -6,7 +6,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReduxRouter from "./router";
+import ReduxRouter from "@root/router";
 
 window.onload = () => {
     ReactDOM.render(

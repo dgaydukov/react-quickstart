@@ -4,6 +4,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fs = require('fs')
 
 module.exports = {
+    resolve: {
+        alias: {
+            '@root': resolve(__dirname, '../src'),
+            '@redux': resolve(__dirname, '../src/redux'),
+            '@modules': resolve(__dirname, '../src/modules'),
+            '@api': resolve(__dirname, '../src/api'),
+        }
+    },
     entry: {
         app: [resolve(__dirname, '../src') + '/app.js'],
         vendor: [

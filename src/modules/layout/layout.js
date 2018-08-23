@@ -6,10 +6,10 @@
 
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Header from "./header/header";
-import Main from "../main/main";
-import Profile from "../profile/profile";
-import NotFound from "../404/notfound";
+import Header from "@modules/layout/header/header";
+import Main from "@modules/main/main";
+import Profile from "@modules/profile/profile";
+import NotFound from "@modules/404/notfound";
 
 const Content = (props) => {
     return(

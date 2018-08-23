@@ -4,7 +4,7 @@
  * Catalog Reducer for getting catalog list
  */
 
-import * as types from '../action-types';
+import * as types from '@redux/action-types';
 
 const initialState = {
     catalog: [],

@@ -17,9 +17,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { connect, Provider } from 'react-redux';
-import store from "./redux/store"
-import Layout from "./modules/layout/layout"
-import * as api from "./api/webapi";
+import store from "@redux/store"
+import Layout from "@modules/layout/layout"
+import * as api from "@api/webapi";
 
 
 

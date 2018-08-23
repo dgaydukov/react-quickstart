@@ -4,7 +4,7 @@
  * List of thunks to store redux logic or make async actions
  */
 
-import * as types from "./action-types";
+import * as types from "@redux/action-types";
 
 
 export function getUserSuccess(data) {

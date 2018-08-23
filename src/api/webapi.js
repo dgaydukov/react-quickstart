@@ -7,7 +7,7 @@
  */
 
 //import axios from "axios";
-import * as ac from "../redux/action-creators";
+import * as ac from "@redux/action-creators";
 
 
 export const getUser = ()=>{
