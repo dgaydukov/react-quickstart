@@ -4,13 +4,13 @@
  *  WebApp layout component
  */
 
-import React from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
-import Header from "@modules/layout/header/header";
-import Footer from "@modules/layout/footer/footer";
-import Main from "@modules/main/main";
-import Profile from "@modules/profile/profile";
-import NotFound from "@modules/404/notfound";
+import React from 'react'
+import {Switch, Route, Redirect} from 'react-router-dom'
+import Header from "@modules/layout/header/header"
+import Footer from "@modules/layout/footer/footer"
+import Main from "@modules/main/main"
+import Profile from "@modules/profile/profile"
+import NotFound from "@modules/404/notfound"
 
 const Content = (props) => {
     return(

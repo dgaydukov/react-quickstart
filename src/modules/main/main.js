@@ -20,15 +20,10 @@ class Main extends React.Component{
         super(props);
         this.state = {
             counter: 1,
+            map: Immutable.Map({a:1, b:2, c:3}),
         }
         this.cache = new WeakMap();
-        this.onClick = this.onClick.bind(this);
-
-        const map1 = Immutable.Map({a:1, b:2, c:3});
-        const map2 = map1.set('b', 50);
-        map2.map((value, key)=>{
-            console.log(key, value)
-        })
+        this.click = this.click.bind(this);
     }
 
     renderButton(i){
@@ -41,15 +36,15 @@ class Main extends React.Component{
                 key={item.id}
                 i={item.id}
                 title={`click ${i}`}
-                onClick={this.onClick}
+                onClick={this.click}
             />
         )
         this.cache.set(item, component)
         return component
     }
 
-
-    onClick(i){
+  
+    click(i){
         this.setState({counter: i});
     }
 

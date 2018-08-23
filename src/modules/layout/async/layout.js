@@ -4,11 +4,12 @@
  *  WebApp layout component
  */
 
-import React from 'react';
-import {Link, Switch, Route, Redirect} from 'react-router-dom';
-import Header from "@modules/layout/header/header";
-import AsyncLoader from "@modules/layout/async/loader";
-import {getUser, getCatalog} from "@api/webapi";
+import React from 'react'
+import {Link, Switch, Route, Redirect} from 'react-router-dom'
+import Header from "@modules/layout/header/header"
+import Footer from "@modules/layout/footer/footer"
+import AsyncLoader from "@modules/layout/async/loader"
+import {getUser, getCatalog} from "@api/webapi"
 
 const Main = props => <AsyncLoader load={System.import('@modules/main/main')} {...props}/>
 const NotFound = props => <AsyncLoader load={System.import('@modules/404/notfound')} {...props}/>
@@ -58,6 +59,7 @@ export default class Layout extends React.Component{
             <div className="wrapper">
                 <Header {...this.props}/>
                 <Content {...this.props}/>
+                <Footer {...this.props}/>
             </div>
         )
     }
