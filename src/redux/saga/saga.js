@@ -26,3 +26,10 @@ export function* getCatalog(){
 export function* getCatalogAsync() {
     yield takeEvery('GET_CATALOG_ASYNC', getCatalog)
 }
+
+export default function* rootSaga() {
+    yield all([
+        getUserAsync(),
+        getCatalogAsync()
+    ])
+}
