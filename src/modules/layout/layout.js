@@ -36,10 +36,6 @@ const Content = (props) => {
 }
 
 export default class Layout extends React.Component{
-    constructor(props){
-        super(props);
-    }
-
     componentDidMount(){
         this.props.getUser()
         this.props.getCatalog()

@@ -7,6 +7,7 @@ const baseConfig = require("./webpack.base.config.js");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
+    mode: "production",
     resolve: {
         alias: {
             "react": "preact-compat",

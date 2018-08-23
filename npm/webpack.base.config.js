@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fs = require('fs')
 
 module.exports = {
+    mode: "development",
     resolve: {
         alias: {
             '@root': resolve(__dirname, '../src'),

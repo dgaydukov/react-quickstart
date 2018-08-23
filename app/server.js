@@ -17,7 +17,8 @@ const express = require('express'),
     app = express(),
     compiler = webpack(webpackConfig),
     events = sendevent('/eventstream'),    
-    port = process.env.PORT;
+    port = process.env.PORT,
+    url = `http://127.0.0.1:${port}`;
 
 let isFirstStart = true;
 
@@ -58,7 +59,10 @@ compiler.watch({
         })
     }
     if(jsonStats.warnings.length > 0){
-        console.log(`webpack stats warnings: ${jsonStats.warnings.length}`, jsonStats.warnings)
+        console.log(`webpack stats warnings: ${jsonStats.warnings.length}`)
+        jsonStats.warnings.map(err=>{
+            console.log(err)
+        })
     }
     console.log(`change detected: ${url}`);
     events.broadcast({reload: true});
@@ -73,5 +77,5 @@ app.listen(port, (err)=>{
     if (err) {
         return console.error(err);
     }
-    console.log(`Listening http://127.0.0.1:${port}`);
+    console.log(`Listening ${url}`);
 });

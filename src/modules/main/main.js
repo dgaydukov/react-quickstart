@@ -12,8 +12,7 @@ import PropTypes from 'prop-types';
 const Immutable = require('immutable');
 
 
-const map1 = Immutable.Map({a:1, b:2, c:3});
-const map2 = map1.set('b', 50);
+
 
 
 class Main extends React.Component{
@@ -24,6 +23,12 @@ class Main extends React.Component{
         }
         this.cache = new WeakMap();
         this.onClick = this.onClick.bind(this);
+
+        const map1 = Immutable.Map({a:1, b:2, c:3});
+        const map2 = map1.set('b', 50);
+        map2.map((value, key)=>{
+            console.log(key, value)
+        })
     }
 
     renderButton(i){
