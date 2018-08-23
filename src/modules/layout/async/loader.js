@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-export default class AsyncComponent extends React.Component {
+export default class AsyncLoader extends React.Component {
     componentWillMount(){
         this.props.load.then(Component => {
             this.Component = Component;
@@ -24,6 +24,6 @@ export default class AsyncComponent extends React.Component {
 }
 
 
-AsyncComponent.propTypes = {
+AsyncLoader.propTypes = {
     load: PropTypes.instanceOf(Promise).isRequired,
 }

@@ -7,12 +7,12 @@
 import React from 'react';
 import {Link, Switch, Route, Redirect} from 'react-router-dom';
 import Header from "@modules/layout/header/header";
-import AsyncComponent from "@root/async-component";
+import AsyncLoader from "@modules/layout/async/loader";
 import {getUser, getCatalog} from "@api/webapi";
 
-const Main = props => <AsyncComponent load={System.import('../main/main')} {...props}/>
-const NotFound = props => <AsyncComponent load={System.import('../404/notfound')} {...props}/>
-const Profile = props => <AsyncComponent load={System.import('../profile/profile')} {...props}/>
+const Main = props => <AsyncLoader load={System.import('@modules/main/main')} {...props}/>
+const NotFound = props => <AsyncLoader load={System.import('@modules/404/notfound')} {...props}/>
+const Profile = props => <AsyncLoader load={System.import('@modules/profile/profile')} {...props}/>
 
 
 const Content = (props) => {

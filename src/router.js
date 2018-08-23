@@ -6,10 +6,10 @@
  *
  *
  * in order to use async loading based on url
- * change this code
+ * uncomment
+ * import AsyncLayout from "@modules/layout/async/layout"
+ * and change this code
  * <Layout {...props}/> => <AsyncLayout {...props}/>
- * and uncomment
- * import AsyncLayout from "./modules/layout/async.layout"
  *
  */
 
