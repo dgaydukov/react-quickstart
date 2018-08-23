@@ -42,7 +42,7 @@ export default class Layout extends React.Component{
     }
 
     componentDidMount(){
-        getUser();
+        this.props.dispatch(getUser())
     }
 
     render(){

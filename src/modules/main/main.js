@@ -14,7 +14,7 @@ var Immutable = require('immutable');
 
 const map1 = Immutable.Map({a:1, b:2, c:3});
 const map2 = map1.set('b', 50);
-console.log(map1, map2)
+
 
 class Main extends React.Component{
     constructor(props){
