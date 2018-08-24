@@ -7,10 +7,10 @@ module.exports = {
     mode: "development",
     resolve: {
         alias: {
-            '@root': resolve(__dirname, '../src'),
-            '@redux': resolve(__dirname, '../src/redux'),
-            '@modules': resolve(__dirname, '../src/modules'),
-            '@api': resolve(__dirname, '../src/api'),
+            '@root': resolve(__dirname, '@src'),
+            '@redux': resolve(__dirname, '@src/redux'),
+            '@modules': resolve(__dirname, '@src/modules'),
+            '@api': resolve(__dirname, '@src/api'),
         }
     },
     entry: {
@@ -51,9 +51,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("../build/css/bundle.css"),
+        new ExtractTextPlugin("@build/css/bundle.css"),
     ],
     externals: {
-        'site-config': JSON.stringify(require('../src/site-config.json'))
+        'site-config': JSON.stringify(require('@src/site-config.json'))
     }
 };

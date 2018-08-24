@@ -5,15 +5,18 @@
   "main": "app/server.js",
   "scripts": {
     "start": "cross-env PORT=3315 node app/server.js",
-    "webpack": "cross-env PORT=3316 node_modules/webpack-dev-server/bin/webpack-dev-server.js --config npm/webpack.dev-server.config.js",
-    "build:dev": "node_modules/webpack/bin/webpack.js -p --config npm/webpack.base.config.js",
-    "build:prod": "node_modules/webpack/bin/webpack.js -p --config npm/webpack.prod.config.js",
-    "gitpush": "sh npm/gitpush.sh"
+    "webpack": "cross-env PORT=3316 node_modules/webpack-dev-server/bin/webpack-dev-server.js --config npm/webpack/dev-server.config.js",
+    "build:dev": "node_modules/webpack/bin/webpack.js -p --config npm/webpack/base.config.js",
+    "build:prod": "node_modules/webpack/bin/webpack.js -p --config npm/webpack/prod.config.js",
+    "gitpush": "sh npm/shell/gitpush.sh",
+    "zip": "sh npm/shell/zip.sh"
   },
   "author": "Gaydukov Dmitriy",
   "license": "ISC",
   "_moduleAliases": {
-    "@npm": "npm"
+    "@npm": "npm",
+    "@src": "src",
+    "@build": "build"
   },
   "dependencies": {
     "axios": "^0.18.0",
