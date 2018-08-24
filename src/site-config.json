@@ -1,5 +1,5 @@
 {
-    "baseURL": "https://payqr.ru/websdk/api/",
+    "baseURL": "https://jsonplaceholder.typicode.com/",
     "cookieUserId": "userId",
     "cookieAuthToken": "accessToken"
 }
