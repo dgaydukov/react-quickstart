@@ -8,13 +8,13 @@ import React, {PureComponent} from 'react';
 
 
 
-class Main extends PureComponent{
+class Catalog extends React.Component{
     render(){
         return(
             <div>
-                <h1>Main</h1>
+                <h1>Catalog</h1>
             </div>
         )
     }
 }
-export default Main;
+export default Catalog;

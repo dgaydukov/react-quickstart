@@ -8,6 +8,7 @@ import React from 'react'
 import {Switch, Route, Redirect} from 'react-router-dom'
 import Header from "@modules/layout/header/header"
 import Footer from "@modules/layout/footer/footer"
+import Catalog from "@modules/catalog/catalog"
 import Main from "@modules/main/main"
 import Profile from "@modules/profile/profile"
 import NotFound from "@modules/404/notfound"
@@ -15,23 +16,17 @@ import NotFound from "@modules/404/notfound"
 const Content = (props) => {
     return(
         <Switch>
-            <Route path="/main" component={Main}/>
-            <Route path="/403" render={(routeProps)=>{
-                return(
-                    <NotFound {...props} {...routeProps}/>
-                )
-            }}/>
+            <Route exact path="/" component={Main}/>
+            <Route path="/catalog" component={Catalog}/>
             <Route path="/profile" render={(routeProps)=>{
                 return(
                     props.user.id ?
                         <Profile {...props}/>
                         :
-                        <Redirect to={{
-                            pathname: '/403',
-                            from: routeProps.location.pathname
-                        }}/>
+                        <NotFound {...props}/>
                 )
             }}/>
+            <Route component={NotFound}/>
         </Switch>
     )
 }
