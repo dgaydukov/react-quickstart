@@ -6,6 +6,7 @@
 * [Built With](#built-with)
 * [Project Structure](#project-structure)
 * [How to work](#how-to-work)
+* [Zip your project](#zip-your-project)
 * [redux-thunk vs redux-saga](#redux-vs-saga)
 * [Async Loading](#async-loading)
 * [Authors](#authors)
@@ -66,7 +67,11 @@ This project is very versatile. First of all you have 2 web servers
 * Webpack server, use [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server) for recompile and [HMR](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) for page reload
 You should choose which scenario fits best for you
 
+### Zip your project
 
+Sometimes you need to zip your source code and send to somebody. For example you are making some test on interview. Or your code
+is private and you don't want to share in on Github. In this case just run `npm run zip`. This command will create zip folder
+in the same folder where your project is located.
 
 ### redux-thunk vs redux-saga
 
