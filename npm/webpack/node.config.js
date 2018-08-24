@@ -1,17 +1,17 @@
 const {resolve} = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-const baseConfig = require("./webpack.base.config.js");
+const baseConfig = require("./base.config.js");
 
 const config = {
     module: {
         rules: [
             {
                 test: /\.js$/,
-                include: resolve(__dirname, './../src'),
+                include: resolve(__dirname, './../../src'),
                 loader: "eslint-loader",
                 query: {
-                    configFile: resolve(__dirname, "./../npm/.eslintrc.json"),
+                    configFile: resolve(__dirname, "./../../npm/.eslintrc.json"),
                 },
             },
         ]

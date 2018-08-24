@@ -12,8 +12,8 @@ const express = require('express'),
     webpack = require("webpack"),
     sendevent = require('sendevent'),
     imageBundler = require("@npm/build/image.bundler"),
-    webpackConfig = require("@npm/webpack/webpack.node.config"),
-    path = require('path'),
+    webpackConfig = require("@npm/webpack/node.config"),
+    {join} = require('path'),
     app = express(),
     compiler = webpack(webpackConfig),
     events = sendevent('/eventstream'),    
@@ -34,11 +34,11 @@ app.get('*.gz', (req, res, next)=>{
 app.use(events);
 
 //serve static (css, js, images)
-app.use(express.static(path.join(__dirname, './../build')));
+app.use(express.static(join(__dirname, './../build')));
 
 //redirect every request to index.html, so we can use BrowserRouter (instead of HashRouter)
 app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, './../build/index.html'));
+    res.sendFile(join(__dirname, './../build/index.html'));
 });
 
 
@@ -48,19 +48,19 @@ compiler.watch({
     aggregateTimeout: 300,
     poll: true,
 }, (err, stats)=>{
-    var jsonStats = stats.toJson();
+    const stat = stats.toJson();
     if(err){
         console.log("webpack error", err)
     }
-    if(jsonStats.errors.length > 0){
-        console.log(`webpack stats error: ${jsonStats.errors.length}`)
-        jsonStats.errors.map(err=>{
+    if(stat.errors.length > 0){
+        console.log(`webpack stats error: ${stat.errors.length}`)
+        stat.errors.map(err=>{
             console.log(err)
         })
     }
-    if(jsonStats.warnings.length > 0){
-        console.log(`webpack stats warnings: ${jsonStats.warnings.length}`)
-        jsonStats.warnings.map(err=>{
+    if(stat.warnings.length > 0){
+        console.log(`webpack stats warnings: ${stat.warnings.length}`)
+        stat.warnings.map(err=>{
             console.log(err)
         })
     }

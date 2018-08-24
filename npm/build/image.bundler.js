@@ -7,8 +7,8 @@
 const path = require('path'),
     fs = require('fs'),
     fse = require('fs-extra'),
-    modulesDir = path.join(__dirname, '@src/modules'),
-    buildImgDir = path.join(__dirname, '@build/img');
+    modulesDir = path.join(__dirname, '../../src/modules'),
+    buildImgDir = path.join(__dirname, '../../build/img');
 
 const IMG_DIR = "img";
 

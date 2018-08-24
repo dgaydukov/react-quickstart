@@ -2,9 +2,9 @@ const {resolve} = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-const baseConfig = require("./webpack.base.config.js");
+const baseConfig = require("./base.config.js");
 const port = process.env.PORT;
-const buildDir = resolve(__dirname, '../webpack-build');
+const buildDir = resolve(__dirname, '../../webpack-build');
 
 const config = {
     target: "web",
@@ -12,7 +12,7 @@ const config = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({
-            template: resolve(__dirname, '../build/webpack-index.html')
+            template: resolve(__dirname, '../../build/webpack-index.html')
         })
     ],
     devServer: {
