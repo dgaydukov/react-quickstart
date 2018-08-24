@@ -8,7 +8,7 @@ import React, {PureComponent} from 'react';
 
 
 
-class Catalog extends React.Component{
+class Catalog extends PureComponent{
     render(){
         return(
             <div>

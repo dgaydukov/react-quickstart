@@ -5,7 +5,7 @@
  */
 
 import React from 'react'
-import {Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import Header from "@modules/layout/header/header"
 import Footer from "@modules/layout/footer/footer"
 import Catalog from "@modules/catalog/catalog"
@@ -23,7 +23,7 @@ const Content = (props) => {
                     props.user.id ?
                         <Profile {...props}/>
                         :
-                        <NotFound {...props}/>
+                        <NotFound {...props} {...routeProps}/>
                 )
             }}/>
             <Route component={NotFound}/>

@@ -7,14 +7,14 @@ module.exports = {
     mode: "development",
     resolve: {
         alias: {
-            '@root': resolve(__dirname, '@src'),
-            '@redux': resolve(__dirname, '@src/redux'),
-            '@modules': resolve(__dirname, '@src/modules'),
-            '@api': resolve(__dirname, '@src/api'),
+            '@root': resolve(__dirname, '../../src'),
+            '@redux': resolve(__dirname, '../../src/redux'),
+            '@modules': resolve(__dirname, '../../src/modules'),
+            '@api': resolve(__dirname, '../../src/api'),
         }
     },
     entry: {
-        app: [resolve(__dirname, '../src') + '/app.js'],
+        app: [resolve(__dirname, '../../src') + '/app.js'],
         vendor: [
             'babel-polyfill',
             'react',
@@ -24,7 +24,7 @@ module.exports = {
         ]
     },
     output: {
-        path: resolve(__dirname, '../build'),
+        path: resolve(__dirname, '../../build'),
         filename: 'js/react/[name].js',
         publicPath: '/',
         chunkFilename: 'js/react/[id].[chunkhash].js',
@@ -33,7 +33,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                include: resolve(__dirname, './../src'),
+                include: resolve(__dirname, '../../src'),
                 loader: "babel-loader",
                 query: {
                     presets: ['es2015', 'react'],

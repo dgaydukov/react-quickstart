@@ -44,6 +44,8 @@ app.get('*', (req, res)=>{
 
 imageBundler.watch();
 
+
+console.log("opening browser...")
 compiler.watch({
     aggregateTimeout: 300,
     poll: true,
@@ -67,7 +69,7 @@ compiler.watch({
     console.log(`change detected: ${url}`);
     events.broadcast({reload: true});
     if(isFirstStart){
-        console.log(`opening browser ${url}`)
+        console.log(`go to ${url}`)
         exec(`x-www-browser ${url}`)
         isFirstStart = false;
     }
