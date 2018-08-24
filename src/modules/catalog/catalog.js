@@ -12,7 +12,7 @@ class Catalog extends React.Component{
     render(){
         return(
             <div>
-                <h1>Catalog</h1>
+                <h1>Catalog Page</h1>
             </div>
         )
     }

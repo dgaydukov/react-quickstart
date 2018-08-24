@@ -13,7 +13,7 @@
   "author": "Gaydukov Dmitriy",
   "license": "ISC",
   "_moduleAliases": {
-    "@npm": "./npm"
+    "@npm": "npm"
   },
   "dependencies": {
     "axios": "^0.18.0",
