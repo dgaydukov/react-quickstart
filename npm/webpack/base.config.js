@@ -51,7 +51,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("@build/css/bundle.css"),
+        new ExtractTextPlugin("../../build/css/bundle.css"),
     ],
     externals: {
         'site-config': JSON.stringify(require('@src/site-config.json'))

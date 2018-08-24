@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env PORT=3315 node app/server.js",
     "webpack": "cross-env PORT=3316 node_modules/webpack-dev-server/bin/webpack-dev-server.js --config npm/webpack/dev-server.config.js",
-    "build:dev": "node_modules/webpack/bin/webpack.js -p --config npm/webpack/base.config.js",
+    "build:dev": "node_modules/webpack/bin/webpack.js --config npm/webpack/base.config.js",
     "build:prod": "node_modules/webpack/bin/webpack.js -p --config npm/webpack/prod.config.js",
     "gitpush": "sh npm/shell/gitpush.sh",
     "zip": "sh npm/shell/zip.sh"
@@ -37,6 +37,7 @@
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
+    "serve": "^10.0.0",
     "universal-cookie": "^2.0.7"
   },
   "devDependencies": {
