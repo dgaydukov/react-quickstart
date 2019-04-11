@@ -5,7 +5,7 @@
 
 const config = window.APP_CONFIG;
 
-module.exports = {
+export default {
     env: config ? config.ENV_TYPE : "local",
     baseURL: config ? config.API_BASE_URL : "https://jsonplaceholder.typicode.com/",
     cookieUserId: config ? config.COOKIE_USER_ID_NAME : "userId",

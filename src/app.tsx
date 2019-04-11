@@ -23,7 +23,7 @@ window.onload = () => {
  */
 if("NODE" == process.env.WEB_SERVER){
     const sendevent = require('sendevent');
-    sendevent('/eventstream', function(event) {
+    sendevent('/eventstream', event => {
         if(event.reload){
             window.location.reload();
         }
