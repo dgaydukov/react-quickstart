@@ -7,16 +7,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReduxRouter from "@root/router";
-import config from 'site-config';
+import config from '@root/site-config';
 
 window.onload = () => {
+    console.log(`Running env: ${config.env}`);
     ReactDOM.render(
         <ReduxRouter/>,
         document.getElementById('main')
     );
 }
-
-console.log(window.APP_CONFIG, config)
 
 /**
  * Page reload after file changes, with SSE & node.js express server
