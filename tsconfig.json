@@ -9,7 +9,6 @@
       "@root/*": ["/src/*"],
       "@src/*": ["/src/*"],
     },
-    "noImplicitAny": true,
     "jsx": "react",
     "sourceMap": true,
     "experimentalDecorators": true,

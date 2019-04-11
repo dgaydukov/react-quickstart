@@ -12,6 +12,7 @@ module.exports = {
             '@modules': resolve(__dirname, '../../src/modules'),
             '@api': resolve(__dirname, '../../src/api'),
         },
+        extensions: ['.ts', '.tsx', '.js', '.json']
     },
     entry: {
         app: [resolve(__dirname, '../../src') + '/app.tsx'],
@@ -34,15 +35,16 @@ module.exports = {
             {
                 test: /\.tsx$/,
                 include: resolve(__dirname, '../../src'),
-                loader: "awesome-typescript-loader",
-                query: {
-                    presets: ['es2015', 'react'],
-                    plugins: [
-                        "babel-plugin-transform-function-bind",
-                        "babel-plugin-transform-object-rest-spread",
-                        "transform-async-to-generator",
-                    ]
-                }
+                //loader: "awesome-typescript-loader",
+                loader: "ts-loader",
+                // query: {
+                //     presets: ['es2015', 'react'],
+                //     plugins: [
+                //         "babel-plugin-transform-function-bind",
+                //         "babel-plugin-transform-object-rest-spread",
+                //         "transform-async-to-generator",
+                //     ]
+                // }
             },
             {
                 test: /\.css/,

@@ -80,6 +80,7 @@
     "sendevent": "1.0.4",
     "source-map-loader": "0.2.4",
     "style-loader": "0.22.1",
+    "ts-loader": "5.3.3",
     "ts-node": "8.0.3",
     "typescript": "3.4.3",
     "uglifycss": "0.0.29",
