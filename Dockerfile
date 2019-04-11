@@ -4,8 +4,8 @@ WORKDIR /app
 COPY . ./
 RUN npm i
 RUN npm run build:dev
-RUN ["chmod", "+x", "./src/env-variables.sh"]
-RUN ["./src/env-variables.sh"]
+RUN ["chmod", "+x", "./env-variables.sh"]
+RUN ["./env-variables.sh"]
 
 # Serve stage
 FROM nginx:alpine
