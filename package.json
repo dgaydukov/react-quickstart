@@ -4,7 +4,7 @@
   "description": "react foundation for building any react app",
   "main": "app/server.js",
   "scripts": {
-    "start": "cross-env APP_PORT=3315 node app/server.js",
+    "start": "cross-env APP_PORT=3315 ts-node app/server.ts",
     "webpack": "cross-env APP_PORT=3316 node_modules/webpack-dev-server/bin/webpack-dev-server.js --config npm/webpack/dev-server.config.js",
     "build:dev": "node_modules/webpack/bin/webpack.js --config npm/webpack/base.config.js",
     "build:prod": "node_modules/webpack/bin/webpack.js -p --config npm/webpack/prod.config.js",
@@ -19,7 +19,6 @@
     "@build": "build"
   },
   "dependencies": {
-    "@types/node": "11.13.4",
     "axios": "0.18.0",
     "body-parser": "1.17.1",
     "express": "4.15.2",
@@ -42,6 +41,8 @@
     "universal-cookie": "2.0.7"
   },
   "devDependencies": {
+    "@types/react": "16.8.13",
+    "@types/react-dom": "16.8.3",
     "autoprefixer": "9.1.1",
     "babel-core": "6.25.0",
     "babel-eslint": "8.0.0",
@@ -75,7 +76,7 @@
     "react-hot-loader": "4.3.4",
     "sendevent": "1.0.4",
     "style-loader": "0.22.1",
-    "ts-node": "8.0.3",
+    "typescript": "3.4.3",
     "uglifycss": "0.0.29",
     "webpack": "4.16.5",
     "webpack-bundle-analyzer": "2.9.0",
