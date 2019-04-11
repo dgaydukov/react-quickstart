@@ -14,7 +14,7 @@ module.exports = {
         },
     },
     entry: {
-        app: [resolve(__dirname, '../../src') + '/app.ts'],
+        app: [resolve(__dirname, '../../src') + '/app.tsx'],
         vendor: [
             'babel-polyfill',
             'react',
@@ -32,7 +32,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /\.tsx$/,
                 include: resolve(__dirname, '../../src'),
                 loader: "awesome-typescript-loader",
                 query: {
