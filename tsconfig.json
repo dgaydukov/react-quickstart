@@ -17,6 +17,7 @@
   ],
   "exclude": [
     "node_modules",
-    "db_data",
+    "build",
+    "npm",
   ]
 }
