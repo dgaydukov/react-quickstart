@@ -5,7 +5,7 @@
  * Key logic is here System.import, When webpack see this construction, it automatically starts to chunk files
  */
 
-import React from 'react';
+import * as React from "react";
 import PropTypes from 'prop-types';
 
 

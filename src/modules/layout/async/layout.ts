@@ -4,8 +4,8 @@
  *  WebApp layout component
  */
 
-import React from 'react'
-import {Link, Switch, Route, Redirect} from 'react-router-dom'
+import * as React from "react";
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Header from "@modules/layout/header/header"
 import Footer from "@modules/layout/footer/footer"
 import AsyncLoader from "@modules/layout/async/loader"

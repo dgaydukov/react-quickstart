@@ -4,9 +4,9 @@
 * Header component
  */
 
-import React, {PureComponent} from 'react';
+import * as React from "react";
 
-class Footer extends PureComponent{
+class Footer extends React.PureComponent{
     constructor(props){
         super(props);
     }

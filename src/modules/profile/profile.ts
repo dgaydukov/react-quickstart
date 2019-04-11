@@ -4,7 +4,7 @@
  * Profile component
  */
 
-import React from 'react';
+import * as React from "react";
 
 export default class Profile extends React.Component{
     constructor(props){

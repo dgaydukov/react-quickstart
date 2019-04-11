@@ -1,14 +1,8 @@
 'use strict';
 
+import * as React from "react";
 
-
-import React, {PureComponent} from 'react';
-
-
-
-
-
-class Catalog extends PureComponent{
+class Catalog extends React.PureComponent{
     render(){
         return(
             <div>

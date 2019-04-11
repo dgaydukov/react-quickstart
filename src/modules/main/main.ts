@@ -1,14 +1,10 @@
 'use strict';
 
 
-
-import React, {PureComponent} from 'react';
-
+import * as React from "react";
 
 
-
-
-class Main extends PureComponent{
+class Main extends React.PureComponent{
     render(){
         return(
             <div>

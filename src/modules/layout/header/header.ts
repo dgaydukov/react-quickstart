@@ -4,12 +4,12 @@
 * Header component
  */
 
-import React, {PureComponent} from 'react';
+import * as React from "react";
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import s from "@modules/layout/header/header.css";
 
-class Header extends PureComponent{
+class Header extends React.PureComponent{
     constructor(props){
         super(props);
     }
