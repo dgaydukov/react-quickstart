@@ -15,6 +15,8 @@ window.onload = () => {
     );
 }
 
+console.log(window.APP_CONFIG)
+
 /**
  * Page reload after file changes, with SSE & node.js express server
  * https://www.npmjs.com/package/server-sent-events
