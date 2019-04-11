@@ -3,7 +3,7 @@ FROM node:8 as react-build
 WORKDIR /app
 COPY . ./
 RUN npm i
-RUN npm run build:prod
+RUN npm run build:dev
 
 # Stage 2 - the production environment
 FROM nginx:alpine

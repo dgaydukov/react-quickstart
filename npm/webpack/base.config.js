@@ -54,6 +54,6 @@ module.exports = {
         new ExtractTextPlugin("../../build/css/bundle.css"),
     ],
     externals: {
-        'site-config': JSON.stringify(require('@src/site-config.json'))
+        'site-config': JSON.stringify(require('../../src/site-config.json'))
     }
 };
