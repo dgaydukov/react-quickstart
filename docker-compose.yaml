@@ -6,8 +6,6 @@ services:
     build: .
     restart: always
     ports: 
-      - ${EXTERNAL_APP_PORT}:${APP_PORT}
+      - ${EXTERNAL_APP_PORT}:${NGINX_PORT}
     environment:
       - APP_PORT=${APP_PORT}
-    depends_on: 
-      - db
