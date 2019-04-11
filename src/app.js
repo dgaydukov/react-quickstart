@@ -7,6 +7,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReduxRouter from "@root/router";
+import config from 'site-config';
 
 window.onload = () => {
     ReactDOM.render(
@@ -15,7 +16,7 @@ window.onload = () => {
     );
 }
 
-console.log(window.APP_CONFIG)
+console.log(window.APP_CONFIG, config)
 
 /**
  * Page reload after file changes, with SSE & node.js express server
