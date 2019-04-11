@@ -141,5 +141,4 @@ is my explanation how it works in `React`.
 * **Gaydukov Dmitiry** - *Take a look* - [How to become a Senior Javascript Developer](https://github.com/dgaydukov/how-to-become-a-senior-js-developer)
 
 ### Plans
-2. Add .env params
-3. Rewrite to ts
+1. Move to ts
