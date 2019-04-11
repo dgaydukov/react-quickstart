@@ -17,7 +17,7 @@ const express = require('express'),
     app = express(),
     compiler = webpack(webpackConfig),
     events = sendevent('/eventstream'),    
-    port = process.env.PORT,
+    port = process.env.APP_PORT,
     url = `http://127.0.0.1:${port}`;
 
 let isFirstStart = true;

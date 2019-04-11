@@ -4,8 +4,8 @@
   "description": "react foundation for building any react app",
   "main": "app/server.js",
   "scripts": {
-    "start": "cross-env PORT=3315 node app/server.js",
-    "webpack": "cross-env PORT=3316 node_modules/webpack-dev-server/bin/webpack-dev-server.js --config npm/webpack/dev-server.config.js",
+    "start": "cross-env APP_PORT=3315 node app/server.js",
+    "webpack": "cross-env APP_PORT=3316 node_modules/webpack-dev-server/bin/webpack-dev-server.js --config npm/webpack/dev-server.config.js",
     "build:dev": "node_modules/webpack/bin/webpack.js --config npm/webpack/base.config.js",
     "build:prod": "node_modules/webpack/bin/webpack.js -p --config npm/webpack/prod.config.js",
     "gitpush": "sh npm/shell/gitpush.sh",
