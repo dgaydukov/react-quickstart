@@ -11,7 +11,7 @@ module.exports = {
             '@redux': resolve(__dirname, '../../src/redux'),
             '@modules': resolve(__dirname, '../../src/modules'),
             '@api': resolve(__dirname, '../../src/api'),
-        }
+        },
     },
     entry: {
         app: [resolve(__dirname, '../../src') + '/app.ts'],
@@ -25,16 +25,16 @@ module.exports = {
     },
     output: {
         path: resolve(__dirname, '../../build'),
-        filename: 'js/react/[name].ts',
+        filename: 'js/react/[name].js',
         publicPath: '/',
-        chunkFilename: 'js/react/[id].[chunkhash].ts',
+        chunkFilename: 'js/react/[id].[chunkhash].js',
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
                 include: resolve(__dirname, '../../src'),
-                loader: "babel-loader",
+                loader: "awesome-typescript-loader",
                 query: {
                     presets: ['es2015', 'react'],
                     plugins: [
