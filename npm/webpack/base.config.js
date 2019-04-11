@@ -14,7 +14,7 @@ module.exports = {
         }
     },
     entry: {
-        app: [resolve(__dirname, '../../src') + '/app.js'],
+        app: [resolve(__dirname, '../../src') + '/app.ts'],
         vendor: [
             'babel-polyfill',
             'react',
@@ -25,14 +25,14 @@ module.exports = {
     },
     output: {
         path: resolve(__dirname, '../../build'),
-        filename: 'js/react/[name].js',
+        filename: 'js/react/[name].ts',
         publicPath: '/',
-        chunkFilename: 'js/react/[id].[chunkhash].js',
+        chunkFilename: 'js/react/[id].[chunkhash].ts',
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.ts$/,
                 include: resolve(__dirname, '../../src'),
                 loader: "babel-loader",
                 query: {

@@ -1,5 +1,9 @@
 # React QuickStart
 
+```diff
+- The project is broken now. Working in progress. Moving to typescript.
+```
+
 ## Content
 * [Description](#description)
 * [Installation](#installation)
@@ -142,3 +146,4 @@ is my explanation how it works in `React`.
 
 ### Plans
 1. Move to ts
+2. Remove "Working in progress" in the top of the file 
