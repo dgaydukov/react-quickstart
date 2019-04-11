@@ -15,6 +15,10 @@ const Main = props => <AsyncLoader load={System.import('@modules/main/main')} {.
 const NotFound = props => <AsyncLoader load={System.import('@modules/404/notfound')} {...props}/>
 const Profile = props => <AsyncLoader load={System.import('@modules/profile/profile')} {...props}/>
 
+interface IProps {
+    getUser: Function;
+    getCatalog: Function;
+  }
 
 const Content = (props) => {
     return(
@@ -44,8 +48,8 @@ const Content = (props) => {
     )
 }
 
-export default class Layout extends React.Component{
-    constructor(props){
+export default class Layout extends React.Component<IProps>{
+    constructor(props: IProps){
         super(props);
     }
  

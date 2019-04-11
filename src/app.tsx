@@ -5,13 +5,13 @@
  */
 
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as DOM from "react-dom";
 import ReduxRouter from "@root/router";
 import config from '@root/site-config';
 
 window.onload = () => {
     console.log(`Running env: ${config.env}`);
-    ReactDOM.render(
+    DOM.render(
         <ReduxRouter/>,
         document.getElementById('main')
     );

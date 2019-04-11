@@ -3,6 +3,16 @@
  * For local development, just set default values
  */
 
+
+/**
+ * Lifehack to make ts work with window object
+ * https://stackoverflow.com/questions/12709074/how-do-you-explicitly-set-a-new-property-on-window-in-typescript
+ */
+declare global {
+    interface Window { APP_CONFIG: any; }
+}
+window.APP_CONFIG = window.APP_CONFIG || {};
+
 const config = window.APP_CONFIG;
 
 export default {
