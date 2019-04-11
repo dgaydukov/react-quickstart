@@ -24,7 +24,7 @@ let isFirstStart = true;
 
 
 
-//serve gzip encoding header for gzipped files (usually bundle.js.gz)
+// serve gzip encoding header for gzipped files (usually bundle.js.gz)
 app.get('*.gz', (req, res, next)=>{
     res.set('Content-Encoding', 'gzip');
     next();
@@ -33,10 +33,10 @@ app.get('*.gz', (req, res, next)=>{
 //use Server-Sent Events with express server
 app.use(events);
 
-//serve static (css, js, images)
+// serve static (css, js, images)
 app.use(express.static(join(__dirname, './../build')));
 
-//redirect every request to index.html, so we can use BrowserRouter (instead of HashRouter)
+// redirect every request to index.html, so we can use BrowserRouter (instead of HashRouter)
 app.get('*', (req, res)=>{
     res.sendFile(join(__dirname, './../build/index.html'));
 });
