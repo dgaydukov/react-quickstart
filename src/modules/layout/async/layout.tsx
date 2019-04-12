@@ -9,18 +9,18 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 import Header from "@modules/layout/header/header"
 import Footer from "@modules/layout/footer/footer"
 import AsyncLoader from "@modules/layout/async/loader"
-import {getUser, getCatalog} from "@api/webapi"
 
-const Main = props => <AsyncLoader load={System.import('@modules/main/main')} {...props}/>
-const NotFound = props => <AsyncLoader load={System.import('@modules/404/notfound')} {...props}/>
-const Profile = props => <AsyncLoader load={System.import('@modules/profile/profile')} {...props}/>
+const Main = props => <AsyncLoader load={import('@modules/main/main')} {...props}/>
+const NotFound = props => <AsyncLoader load={import('@modules/404/notfound')} {...props}/>
+const Profile = props => <AsyncLoader load={import('@modules/profile/profile')} {...props}/>
 
 interface IProps {
+    user: any;
     getUser: Function;
     getCatalog: Function;
-  }
+}
 
-const Content = (props) => {
+const Content = (props: IProps) => {
     return(
         <Switch>
             <Route path="/main" render={(routerProps)=>{

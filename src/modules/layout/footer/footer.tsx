@@ -6,7 +6,7 @@
 
 import * as React from "react";
 
-class Footer extends React.PureComponent{
+export default class Footer extends React.PureComponent{
     constructor(props){
         super(props);
     }
@@ -19,9 +19,3 @@ class Footer extends React.PureComponent{
         )
     }
 }
-
-
-Footer.propTypes = {
-};
-
-export default Footer
