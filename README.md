@@ -1,8 +1,5 @@
 # React QuickStart
 
-```diff
-- The project is broken now. Working in progress. Moving to typescript.
-```
 
 ## Content
 * [Description](#description)
@@ -145,5 +142,6 @@ is my explanation how it works in `React`.
 * **Gaydukov Dmitiry** - *Take a look* - [How to become a Senior Javascript Developer](https://github.com/dgaydukov/how-to-become-a-senior-js-developer)
 
 ### Plans
-1. Move to ts
-2. Remove "Working in progress" in the top of the file 
+1. Fix styles issue
+2. Fix saga `yield all`
+3. Update react to latest version
