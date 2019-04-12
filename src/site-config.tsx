@@ -11,7 +11,6 @@
 declare global {
     interface Window { APP_CONFIG: any; }
 }
-window.APP_CONFIG = window.APP_CONFIG || {};
 
 const config = window.APP_CONFIG;
 
