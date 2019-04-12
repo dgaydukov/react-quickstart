@@ -10,7 +10,7 @@ import ReduxRouter from "@root/router";
 import config from '@root/site-config';
 
 window.onload = () => {
-    console.log(`Running env: ${config.env}`);
+    console.log(`React version: ${React.version}, env: ${config.env}`);
     DOM.render(
         <ReduxRouter/>,
         document.getElementById('main')

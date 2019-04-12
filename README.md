@@ -143,5 +143,3 @@ is my explanation how it works in `React`.
 
 ### Plans
 1. Fix styles issue
-2. Fix saga `yield all`
-3. Update react to latest version
