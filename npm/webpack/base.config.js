@@ -35,7 +35,6 @@ module.exports = {
             {
                 test: /\.tsx$/,
                 include: resolve(__dirname, '../../src'),
-                //loader: "awesome-typescript-loader",
                 loader: "ts-loader",
                 // query: {
                 //     presets: ['es2015', 'react'],
