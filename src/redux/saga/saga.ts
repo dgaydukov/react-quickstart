@@ -28,8 +28,8 @@ export function* getCatalogAsync() {
 }
 
 export default function* rootSaga() {
-    yield all([
-        getUserAsync(),
-        getCatalogAsync()
-    ])
+    // yield all([
+    //     getUserAsync(),
+    //     getCatalogAsync()
+    // ])
 }
