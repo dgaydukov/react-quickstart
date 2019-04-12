@@ -15,7 +15,7 @@
 
 ### Description
 
-My own React QuickStart project for fast development of new apps.
+My own React QuickStart project for fast development of new apps. The project was recently rewritten to typescript.
 
 ### Installation
 
