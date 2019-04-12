@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import {Link} from 'react-router-dom';
-import s from "@modules/layout/header/header.css";
+import * as s from "@modules/layout/header/header.css";
 
 interface IProps {
     user: any;
