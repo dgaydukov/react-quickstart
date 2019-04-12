@@ -1,6 +1,6 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const merge = require('webpack-merge');
 const baseConfig = require("./base.config.js");
@@ -18,19 +18,15 @@ const config = {
     plugins: [
         new webpack.optimize.AggressiveMergingPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            comments: false,
-            compress: {
-                unused: true,
-                dead_code: true,
-                warnings: false,
-                drop_debugger: true,
-                conditionals: true,
-                evaluate: true,
-                drop_console: true,
-                sequences: true,
-                booleans: true,
-            }
+        new UglifyJsPlugin({
+            cache: true,
+            parallel: true,
+            uglifyOptions: {
+              compress: false,
+              ecma: 6,
+              mangle: true
+            },
+            sourceMap: true
         }),
         new CompressionPlugin({
             asset: "[path].gz[query]",
