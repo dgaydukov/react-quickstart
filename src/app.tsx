@@ -21,7 +21,7 @@ window.onload = () => {
  * Page reload after file changes, with SSE & node.js express server
  * https://www.npmjs.com/package/server-sent-events
  */
-if("NODE" == process.env.WEB_SERVER){
+if("NODE" === process.env.WEB_SERVER){
     const sendevent = require('sendevent');
     sendevent('/eventstream', event => {
         if(event.reload){
