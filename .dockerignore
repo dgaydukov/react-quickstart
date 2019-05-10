@@ -2,3 +2,10 @@
 node_modules
 build/js/react
 build/css/bundle.css
+
+.env
+.env.tpl
+.gitignore
+code-splitting.md
+docker-compose.yaml
+README.md

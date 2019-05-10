@@ -1,9 +1,11 @@
 # Build stage
 FROM node:10 as react-build
 WORKDIR /app
-COPY . ./
-RUN ["chmod", "+x", "./env-variables.sh"]
+COPY ./package.json ./package-lock.json ./
 RUN ["npm", "i"]
+COPY ./env-variables.sh ./
+RUN ["chmod", "+x", "./env-variables.sh"]
+COPY . ./
 RUN ["npm", "run", "build:dev"]
 
 # Serve stage
